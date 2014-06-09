@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wumpus Welt</title>
+    <link rel="stylesheet" type="text/css" href="webtechproj.css">
+  </head>
+ 
+  <body>   
+    <div class="fenster">
+      <div id="titel">
+        <h1>Wumpus Welt</h1>
+        <p>World of Wumpus</p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li class="name">Menü</li>
+          <li><button id="start">Neues Spiel</button></li>
+          <li><button id="einstellungen">Einstellungen</button></li>
+          <li><button id="ende">Ende</button></li>
+        </ul>
+      </div>
+      <div class="inhalt">
+        <table class="spielfeld">
+        </table>
+      </div>
+      <div class="ausgabe">
+        Ausgabe:
+        <textarea name="user_eingabe" cols="25" rows="5"> Hier erscheint die Ausgabe...</textarea>
+      </div>
+      
+      <p>
+        <small>&copy; Helge Hintze; André Biester; Daniel Hildenbeutel</small>
+      </p>
+    </div>
+
+    <script type="application/dart" src="wumpus.dart"></script>
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

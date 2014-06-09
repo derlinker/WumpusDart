@@ -1,0 +1,87 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.menu{
+	float: left;
+	margin-right: 350px;
+}
+
+.menu .name {
+	font-weight: bold;
+	font-style: underline;
+}
+
+.menu button { 
+	font-family: Arial; 
+	color:#FFCC99; 
+	background-color: #000; 
+	border-color: #3f3f3f;
+	border-style: inset
+}
+
+.menu button:hover{ 
+	font-family: Arial; 
+	color:#FFCC99; 
+	background-color: #3d3d3d; 
+	border-color: #333;
+	border-style: inset
+}
+
+.ausgabe {
+	text-align: center;
+}
+
+.inhalt{
+	float: left;
+	text-align: center;
+}
+
+.fenster {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto 0px auto;
+  padding: 0px 0px 100px 0px;
+}
+
+#titel {
+  background-color: rgba(123, 123, 123, 0.5);
+  text-align: center;
+}
+
+h1, p {
+  color: #333;
+  margin: 15px;
+}
+
+
+td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-spacing: 5px;
+  border-collapse: separate;
+  padding: 5px;
+  text-align: center;
+  background-color: grey;
+  width: 80px;
+  height: 80px;
+}
+
+
+td:hover {
+  background-color: yellow;
+  
+}
+
+.spielfeld {
+   margin: auto;
+}
