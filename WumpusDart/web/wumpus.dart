@@ -1,4 +1,4 @@
-import 'package:WebTechProj/wumpuswelt.dart';
+import 'package:WumpusDart/lib/wumpuswelt.dart';
 
 
 main() => new WumpusView();
