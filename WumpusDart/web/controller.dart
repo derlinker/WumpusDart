@@ -33,7 +33,7 @@ class WumpusController  {
     
     
     // Steuerung des Spielers
-    windows.onKeyDown.listen((KeyboardEvent ev) {
+    window.onKeyDown.listen((KeyboardEvent ev) {
       if (game.ingame) {
       switch (ev.keyCode) {
         case KeyCode.LEFT: game.wumpus.headLeft(); break;
