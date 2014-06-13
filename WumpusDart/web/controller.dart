@@ -1,5 +1,3 @@
-part of wumpuswelt;
-
 class WumpusController  {
   /**
    * Präsentiert das Model

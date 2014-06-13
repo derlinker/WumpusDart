@@ -1,5 +1,4 @@
-part of wumpuswelt;
-
+import "dart:html";
 
 class WumpusWelt {
   //Status des Spiels
