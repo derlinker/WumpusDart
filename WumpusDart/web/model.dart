@@ -4,9 +4,10 @@ class WumpusWelt {
   //Status des Spiels
   Symbol _gamestatus;
   Player _player;
+  int _size, _level;
   
-  final int _level;
-  
+  var gruben, wumbus, gestank, luftzug, schatz = [];
+
   /**
     * Wenn das Spile gestopt wird, aufrufen
     */
@@ -32,7 +33,7 @@ class WumpusWelt {
     */
    void stop() { _gamestatus = #stopped; }
    
-   WumpusWelt(this._level) {
+   WumpusWelt(this._size, this._level) {
        start();
        loadlevel(_level);
        stop();
