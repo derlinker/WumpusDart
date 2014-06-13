@@ -38,6 +38,7 @@ class WumpusWelt {
        loadlevel(_level);
        stop();
      }
+   
    void movePlayer() { if (running) _player.move(); }
    
    /**
@@ -74,6 +75,33 @@ class WumpusWelt {
      print(game.loadlevel(1));
          
    }
+ 
+   /**
+    * Liefert den Spieler zurück
+    */
+   Player get player => _player;
+   
+   /**
+    * Returns whether the game is over.
+    * Game is over, when snake has left the field or is tangled.
+    */
+   bool get gameOver => player.notOnField;
+
+   /**
+    * Indicates whether the player is on field.
+    */
+   bool get onField {
+     return _player['row'] >= 0 &&
+            _player['row'] < _game.size &&
+            _player['col'] >= 0 &&
+            _player['col'] < _game.size;
+   } 
+  
+  /**
+   * Indicates whether the player is not on the field.
+   */
+  bool get notOnField => !onField;
+  
 }
 
 class Field {
