@@ -1,4 +1,4 @@
 import 'package:WumpusDart/lib/wumpuswelt.dart';
 
 
-main() => new WumpusView();
+main() => new WumpusController();

@@ -21,7 +21,7 @@ class WumpusView {
   }
 
   void generateField(WumpusWelt model){
-    final field = model.field;
+    final field = model.loadlevel(1);
     String table = "";
     for(int row = 0; row < field.length; row++) {
       table += "<tr>";
