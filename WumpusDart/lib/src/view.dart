@@ -9,6 +9,18 @@ class WumpusView {
   var spielfeld = querySelector('#spielfeld');
 
   /**
+   * Element with id '#gameover' of the DOM tree.
+   * Used to indicate that a game is over.
+   */
+  final gameover = querySelector('#gameover');
+    
+  /**
+   * Element with id '#reasons' of the DOM tree.
+   * Used to indicate why the game entered the game over state.
+   */
+  final reasons = querySelector('#reasons');
+  
+  /**
    * Start button of the game.
    */
   HtmlElement get startButton => querySelector('#start');
@@ -18,6 +30,16 @@ class WumpusView {
    */
   void update(WumpusWelt model) {
     
+    gameover.innerHtml = model.gameOver ? "Game Over" : "";
+    
+    /**
+     * Spielende
+     */
+    if (model.gameOver) {
+          final onfield = model.wumpus.notOnField ? "Der Spieler ist nicht mehr auf dem Spielfeld.<br>" : "";
+          reasons.innerHtml = "";
+          reasons.innerHtml = "$onfield";
+        }
   }
 
   void generateField(WumpusWelt model){
