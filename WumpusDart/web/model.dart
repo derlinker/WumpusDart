@@ -120,12 +120,23 @@ class WumpusWelt {
 
 class Field {
   //Position des Feldes
-  int _col;
-  int _row;
+  int _col, _size;
+  int _row, _level;
   
-  Field(int col, int row) {
-    _col = col;
-    _row = row;
+  var _gruben, _wumbus, _gestank, _luftzug, _schatz = [];
+  
+  Field(this._size, this._level) {
+  }
+  
+  Field.liste(this._row, this._col){
+  }
+  
+  List<Field> get erstelleGruben {
+    _gruben.add(new Field.liste(_row = 0, _col = 3));
+    _gruben.add(new Field.liste(_row = 3, _col = 3));
+    _gruben.add(new Field.liste(_row = 4, _col = 4));
+    
+    return _gruben;
   }
   
 }
