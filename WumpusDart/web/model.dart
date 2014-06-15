@@ -154,6 +154,14 @@ class Field {
     return _luftzug;
   }
   
+  Field get erstelleWumpus {
+    _wumpus = new Field(2,0);
+    return _wumpus;
+  }
+  Field get erstellSchatz {
+    _schatz = new Field(2,1);
+    return _schatz;
+  }
   
 }
 //Der Spieler hat eine Position (x,y)
