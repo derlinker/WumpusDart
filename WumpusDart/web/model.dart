@@ -38,6 +38,9 @@ class WumpusWelt {
        _player._col = 0; _player._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstellSchatz;
+       _gruben = new Field(this._level).erstelleGruben;
+       _gestank = new Field(this._level).erstelleGestank;
+       _luftzug = new Field(this._level).erstelleLuftzug;
        stop();
      }
    
@@ -63,28 +66,31 @@ class WumpusWelt {
       * Returns whether the game is over.
       * Game is over, when snake has left the field or is tangled.
       */
-     bool get gameOver => _player.notOnField;
-
-     /**
-      * Indicates whether the player is on field.
-      */
-     bool get onField {
-       return _player['_row'] >= 0 &&
-              _player['_row'] < _game.size &&
-              _player['_co1l'] >= 0 &&
-              _player['_col'] < _game.size;
-     } 
+     bool get gameOver => 0; //TODO: Überprüfen!
     
     /**
      * Indicates whether the player is not on the field.
      */
     bool get notOnField => !onField;
+    
+    /**
+     * Indicates whether the player is on field.
+     */
+    bool get onField {
+      return _player >= 0 &&
+          _player._row < _game.size &&
+          _player._col >= 0 &&
+              _player._col < _game.size;
+    
+     }
+    
+    /**
+     * Returns the level of the game. The game is played on a nxn-field.
+     */
+    int get level => _level;
    
    //Derzeit nicht benutzt
-   /**
-    * Returns the level of the game. The game is played on a nxn-field.
-    */
-   int get level => _level;
+
    
    List<Field> loadlevel(level){
      int x, y;
@@ -113,11 +119,7 @@ class WumpusWelt {
      var game = new WumpusWelt(1);
      
      print(game.loadlevel(1));
-         
-   }
- 
-  
-  
+}
 }
 
 class Field {
@@ -174,6 +176,11 @@ class Field {
 class Player{
   int _col;
   int _row;
+  WumpusWelt _game;
+  
+  Player(game){
+    this._game = game;
+  }
 
     void hoch() {
       _row--;
@@ -190,6 +197,6 @@ class Player{
     void rechts() {
       _col++;
     }
-  
-}
 
+
+}
