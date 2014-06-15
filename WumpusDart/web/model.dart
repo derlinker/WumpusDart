@@ -77,10 +77,10 @@ class WumpusWelt {
      * Indicates whether the player is on field.
      */
     bool get onField {
-      return _player >= 0 &&
-          _player._row < _game.size &&
+      return _player._row >= 0 &&
+          _player._row < this._size &&
           _player._col >= 0 &&
-              _player._col < _game.size;
+              _player._col < this._size;
     
      }
     
