@@ -122,22 +122,38 @@ class Field {
   //Position des Feldes
   int _col, _size;
   int _row, _level;
+  var _wumpus, _schatz;
   
-  var _gruben, _wumbus, _gestank, _luftzug, _schatz = [];
+  var _gruben, _gestank, _luftzug = [];
   
-  Field(this._size, this._level) {
+  Field(this._row, this._col) {
   }
   
-  Field.liste(this._row, this._col){
-  }
   
   List<Field> get erstelleGruben {
-    _gruben.add(new Field.liste(_row = 0, _col = 3));
-    _gruben.add(new Field.liste(_row = 3, _col = 3));
-    _gruben.add(new Field.liste(_row = 4, _col = 4));
+    _gruben.add(new Field(0, 3));
+    _gruben.add(new Field(3, 3));
+    _gruben.add(new Field(4, 4));
     
     return _gruben;
   }
+  List<Field> get erstelleGestank {
+    _gestank.add(new Field(1, 0));
+    _gestank.add(new Field(2, 1));
+    _gestank.add(new Field(3, 0));
+    return _gestank;
+  }
+  
+  List<Field> get erstelleLuftzug {
+    _luftzug.add(new Field(0, 1));
+    _luftzug.add(new Field(0, 3));
+    _luftzug.add(new Field(1, 2));
+    _luftzug.add(new Field(2, 1));
+    _luftzug.add(new Field(2, 3));
+    _luftzug.add(new Field(3, 2));
+    return _luftzug;
+  }
+  
   
 }
 //Der Spieler hat eine Position (x,y)
