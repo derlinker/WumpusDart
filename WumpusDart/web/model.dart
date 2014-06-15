@@ -5,8 +5,8 @@ class WumpusWelt {
   Symbol _gamestatus;
   Player _player;
   int _size, _level;
-  
-  var _gruben, _wumbus, _gestank, _luftzug, _schatz = [];
+  var _wumpus, _schatz;
+  var _gruben, _gestank, _luftzug = [];
 
   /**
     * Wenn das Spile gestopt wird, aufrufen
@@ -35,7 +35,9 @@ class WumpusWelt {
    
    WumpusWelt(this._size, this._level) {
        start();
-       
+       _player._col = 0; _player._row = 0;
+       _wumpus = new Field(this._level).erstelleWumpus;
+       _schatz = new Field(this._level).erstellSchatz;
        stop();
      }
    
@@ -43,12 +45,12 @@ class WumpusWelt {
      var _field = new Iterable.generate(_size, (row) {
        return new Iterable.generate(_size, (col) => "weg").toList();
      }).toList();
-     _gruben.forEach((w) => _field[w._row][w._col] = "wand");
-     _wumbus.forEach((z) => _field[z._row][z._col] = "ziel");
-     _gestank.forEach((k) => _field[k._row][k._col] = "kiste");
-     _luftzug.forEach((k) => _field[k._row][k._col] = "kisteImZiel");
-     _schatz[la._row][la._col] = "la";
-     _player[p.row][p.col] = "p";
+     _gruben.forEach((w) => _field[w._row][w._col] = "grube");
+     _gestank.forEach((g) => _field[g._row][g._col] = "gestank");
+     _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
+     _field[_wumpus._row][_wumpus._col] = "_wumpus";
+     _field[_schatz._row][_schatz._col] = "_schatz";
+     _field[_player._row][_player._col] = "_player";
      return _field;
    }
    
@@ -126,40 +128,44 @@ class Field {
   
   var _gruben, _gestank, _luftzug = [];
   
-  Field(this._row, this._col) {
+  Field(this._level){
+    
+  }
+  
+  Field.point(this._row, this._col) {
   }
   
   
   List<Field> get erstelleGruben {
-    _gruben.add(new Field(0, 3));
-    _gruben.add(new Field(3, 3));
-    _gruben.add(new Field(4, 4));
+    _gruben.add(new Field.point(0, 3));
+    _gruben.add(new Field.point(3, 3));
+    _gruben.add(new Field.point(4, 4));
     
     return _gruben;
   }
   List<Field> get erstelleGestank {
-    _gestank.add(new Field(1, 0));
-    _gestank.add(new Field(2, 1));
-    _gestank.add(new Field(3, 0));
+    _gestank.add(new Field.point(1, 0));
+    _gestank.add(new Field.point(2, 1));
+    _gestank.add(new Field.point(3, 0));
     return _gestank;
   }
   
   List<Field> get erstelleLuftzug {
-    _luftzug.add(new Field(0, 1));
-    _luftzug.add(new Field(0, 3));
-    _luftzug.add(new Field(1, 2));
-    _luftzug.add(new Field(2, 1));
-    _luftzug.add(new Field(2, 3));
-    _luftzug.add(new Field(3, 2));
+    _luftzug.add(new Field.point(0, 1));
+    _luftzug.add(new Field.point(0, 3));
+    _luftzug.add(new Field.point(1, 2));
+    _luftzug.add(new Field.point(2, 1));
+    _luftzug.add(new Field.point(2, 3));
+    _luftzug.add(new Field.point(3, 2));
     return _luftzug;
   }
   
   Field get erstelleWumpus {
-    _wumpus = new Field(2,0);
+    _wumpus = new Field.point(2,0);
     return _wumpus;
   }
   Field get erstellSchatz {
-    _schatz = new Field(2,1);
+    _schatz = new Field.point(2,1);
     return _schatz;
   }
   
