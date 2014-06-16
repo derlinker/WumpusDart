@@ -58,6 +58,8 @@ class WumpusWelt {
      return _field;
    }
    
+   List<List<String>> get field => _field;
+   
    /**
       * Liefert den Spieler zurück
       */
