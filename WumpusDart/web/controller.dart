@@ -17,7 +17,7 @@ class WumpusController {
    * 
    */
   WumpusController() {
-    view.startButton.onClick.listen((_) {
+    view.startbutton.onClick.listen((_) {
       if(game.finished){
         game.lvl = game.lvl + 1;
       }
