@@ -61,5 +61,10 @@ class WumpusController {
     if (game.keineWand) {
       view.update(game);
     }
-  }
+  }   
+  
+  /**
+    * Liefert das Spiel zurück
+    */
+   void get spiel => game;
 }
