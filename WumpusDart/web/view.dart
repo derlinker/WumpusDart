@@ -63,7 +63,7 @@ class WumpusView {
     level.innerHtml = "Level: ${model.level}";
     
     // Aktualisiert das Feld
-    final field = model.field;
+    final field = model.;
     for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
         final td = game.querySelector("#field_${row}_${col}");
@@ -90,7 +90,7 @@ class WumpusView {
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
     */
-  void generateField(model){
+  void generateField(WumpusWelt model){
     final field = model.field;
     String table = "";
     for(int row = 0; row < field.length; row++) {
