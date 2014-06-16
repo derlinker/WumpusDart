@@ -52,14 +52,11 @@ class WumpusView {
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    if(model.prüfeZiel())  {
+    
       startbutton.innerHtml = "Nächstes Level";
       startbutton.style.display = "inline";
       gewonnen.style.display = "inline";
-    } else  {
-      startbutton.style.display = "none";
-      gewonnen.style.display = "none";
-    }
+   
     level.innerHtml = "Level: ${model.level}";
     
     // Aktualisiert das Feld
@@ -86,6 +83,7 @@ class WumpusView {
         */
   
   }
+  
 
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
