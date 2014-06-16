@@ -1,5 +1,5 @@
 import 'dart:html';
-
+import 'controller.dart';
 
 class WumpusView {
   
@@ -84,7 +84,7 @@ class WumpusView {
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
     */
-  void generateField(controller.game){
+  void generateField(controller){
     final field = model.field;
     String table = "";
     for(int row = 0; row < field.length; row++) {

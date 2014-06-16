@@ -57,6 +57,7 @@ class WumpusController {
     });
   }
 
+
   void bewegung() {
     if (game.keineWand) {
       view.update(game);
