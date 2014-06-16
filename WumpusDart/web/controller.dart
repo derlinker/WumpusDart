@@ -1,3 +1,5 @@
+library controller;
+
 import 'dart:html';
 import 'model.dart';
 import 'view.dart';

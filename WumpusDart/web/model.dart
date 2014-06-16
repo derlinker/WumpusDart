@@ -1,3 +1,4 @@
+library model;
 import "dart:html";
 
 class WumpusWelt {

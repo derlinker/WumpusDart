@@ -1,5 +1,8 @@
+library view;
+
 import 'dart:html';
 import 'controller.dart';
+
 
 class WumpusView {
   
