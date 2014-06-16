@@ -63,7 +63,6 @@ class WumpusView {
         final td = game.querySelector("#field_${row}_${col}");
         if (td != null) {
           td.classes.clear();
-          if (field[row][col] == "weg") td.classes.add('weg'); else if (field[row][col] == "la") td.classes.add('la'); else if (field[row][col] == "wand") td.classes.add('wand'); else if (field[row][col] == "ziel") td.classes.add('ziel'); else if (field[row][col] == "kiste") td.classes.add('kiste'); else if (field[row][col] == "kisteImZiel") td.classes.add('kisteImZiel');
         }
       }
     }
