@@ -44,7 +44,7 @@ class WumpusWelt {
        stop();
      }
    
-   List<List<String>> get field {
+   List<List<String>> get _field {
      var _field = new Iterable.generate(_size, (row) {
        return new Iterable.generate(_size, (col) => "weg").toList();
      }).toList();
@@ -91,7 +91,7 @@ class WumpusWelt {
    
    //Derzeit nicht benutzt
 
-   
+   /**
    List<Field> loadlevel(level){
      int x, y;
      List<Field> fields;
@@ -119,7 +119,7 @@ class WumpusWelt {
      var game = new WumpusWelt(1);
      
      print(game.loadlevel(1));
-}
+}*/
 }
 
 class Field {
