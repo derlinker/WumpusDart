@@ -63,7 +63,7 @@ class WumpusView {
     level.innerHtml = "Level: ${model.level}";
     
     // Aktualisiert das Feld
-    final field = model.field;
+    final field = model.;
     for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
         final td = game.querySelector("#field_${row}_${col}");
