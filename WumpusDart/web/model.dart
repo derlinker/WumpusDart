@@ -200,6 +200,7 @@ class Player{
     void rechts() {
       _col++;
     }
-
-
+  
+    void set col(int col) { _col = col; }
+    void set row(int row) { _row = row; }
 }
