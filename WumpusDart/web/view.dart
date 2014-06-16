@@ -43,7 +43,7 @@ class WumpusView {
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    if(model.prüfeZiele())  {
+    if(model.prüfeZiel())  {
       startbutton.innerHtml = "Nächstes Level";
       startbutton.style.display = "inline";
       gewonnen.style.display = "inline";

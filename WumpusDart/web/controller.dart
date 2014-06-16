@@ -1,5 +1,6 @@
 import 'dart:html';
 import 'model.dart';
+import 'view.dart';
 
 class WumpusController {
   /**
@@ -20,10 +21,10 @@ class WumpusController {
       game.lvl = game.lvl + 1;
       switch (game.lvl) {
         case 1:
-          game = new WumpusSpiel(8, 1);
+          game = new WumpusWelt(8, 1);
           break;
         case 2:
-          game = new WumpusSpiel(9, 2);
+          game = new WumpusWelt(9, 2);
           break;
       }
       view.generateField(game);
@@ -56,7 +57,7 @@ class WumpusController {
 
   void bewegung() {
     if (game.keineWand) {
-      view.upate(game);
+      view.update(game);
     }
   }
 }
