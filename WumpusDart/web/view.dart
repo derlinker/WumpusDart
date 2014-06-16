@@ -2,7 +2,7 @@ library view;
 
 import 'dart:html';
 import 'controller.dart';
-
+import 'model.dart';
 
 class WumpusView {
   
@@ -13,7 +13,10 @@ class WumpusView {
   var level = querySelector('#level');
   var game = querySelector('#wumpuswelt');
  
-  
+  /**
+   * Präsentiert das Model
+   */
+  final model = new WumpusWelt(0, 0);
   
  /** 
   /**
@@ -87,7 +90,7 @@ class WumpusView {
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
     */
-  void generateField(controller){
+  void generateField(model){
     final field = model.field;
     String table = "";
     for(int row = 0; row < field.length; row++) {

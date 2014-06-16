@@ -13,7 +13,7 @@ class WumpusController {
    * Präsentiert die View
    */
   final view = new WumpusView();
-
+  
   /**
    * Konstruktor der Wumpuswelt
    * 
@@ -69,5 +69,5 @@ class WumpusController {
   /**
     * Liefert das Spiel zurück
     */
-   void get spiel => game;
+   WumpusWelt get spiel => game;
 }
