@@ -3,8 +3,8 @@ import "dart:html";
 
 class WumpusWelt {
   //Status des Spiels
-  Symbol _gamestatus;
-  Player _player;
+  String _gamestatus;
+  Spieler _player;
   int _size, _level;
   var _wumpus, _schatz;
   List _gruben = new List<Field>();
@@ -29,16 +29,16 @@ class WumpusWelt {
    /**
     * Startet 
     */
-   void start() { _gamestatus = #running; }
+   void start() { _gamestatus == #running; }
 
    /**
     * Stops the game.
     */
-   void stop() { _gamestatus = #stopped; }
+   void stop() { _gamestatus == #stopped; }
    
    WumpusWelt(this._size, this._level) {
        //start();
-       //_player._col = 0; _player._row = 0;
+       _player._col = 0; _player._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -65,7 +65,7 @@ class WumpusWelt {
    /**
       * Liefert den Spieler zurück
       */
-     Player get player => _player;
+     Spieler get player => _player;
      
      /**
       * Returns whether the game is over.
@@ -180,12 +180,12 @@ class Field {
   
 }
 //Der Spieler hat eine Position (x,y)
-class Player{
+class Spieler{
   int _col;
   int _row;
   WumpusWelt _game;
   
-  Player(game){
+  Spieler(game){
     this._game = game;
   }
 
