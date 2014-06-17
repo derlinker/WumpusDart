@@ -4,9 +4,11 @@ import "dart:html";
 class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
-  Spieler _player;
-  int _size, _level;
-  var _wumpus, _schatz;
+  Spieler _spieler;
+  int _size;
+  int _level;
+  var _wumpus;
+  var _schatz;
   List _gruben = new List<Field>();
   List _gestank = new List<Field>();
   List _luftzug = new List<Field>();
@@ -38,7 +40,7 @@ class WumpusWelt {
    
    WumpusWelt(this._size, this._level) {
        //start();
-       _player._col = 0; _player._row = 0;
+       _spieler._col = 0; _spieler._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -56,7 +58,7 @@ class WumpusWelt {
      _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
      _field[_wumpus._row][_wumpus._col] = "_wumpus";
      _field[_schatz._row][_schatz._col] = "_schatz";
-     _field[_player._row][_player._col] = "_player";
+     _field[_spieler._row][_spieler._col] = "_player";
      return _field;
    }
    
@@ -65,7 +67,7 @@ class WumpusWelt {
    /**
       * Liefert den Spieler zurück
       */
-     Spieler get player => _player;
+     Spieler get player => _spieler;
      
      /**
       * Returns whether the game is over.
@@ -82,10 +84,10 @@ class WumpusWelt {
      * Indicates whether the player is on field.
      */
     bool get onField {
-      return _player._row >= 0 &&
-          _player._row < this._size &&
-          _player._col >= 0 &&
-              _player._col < this._size;
+      return _spieler._row >= 0 &&
+          _spieler._row < this._size &&
+          _spieler._col >= 0 &&
+              _spieler._col < this._size;
     
      }
     

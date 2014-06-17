@@ -43,30 +43,24 @@ class WumpusController {
       if (game.ingame) {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
-            game.wumpus.headLeft();
+            game.player.links();
             break;
           case KeyCode.RIGHT:
-            game.wumpus.headRight();
+            game.player.rechts();
             break;
           case KeyCode.UP:
-            game.wumpus.headUp();
+            game.player.hoch();
             break;
           case KeyCode.DOWN:
-            game.wumpus.headDown();
+            game.player.runter();
             break;
         }
-        bewegung();
+        view.update(game);
       }
     });
   }
 
 
-  void bewegung() {
-    if (game.keineWand) {
-      view.update(game);
-    }
-  }   
-  
   /**
     * Liefert das Spiel zurück
     */
