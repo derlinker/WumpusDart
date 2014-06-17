@@ -36,7 +36,7 @@ class WumpusWelt {
    
    WumpusWelt(this._size, this._level) {
        start();
-       _player._col = 0; _player._row = 0;
+       //_player._col = 0; _player._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstellSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -142,16 +142,16 @@ class Field {
   
   
   List<Field> get erstelleGruben {
-    _gruben.add(new Field.point(0, 3));
-    _gruben.add(new Field.point(3, 3));
-    _gruben.add(new Field.point(4, 4));
+    //_gruben.add(new Field.point(0, 3));
+    //_gruben.add(new Field.point(3, 3));
+    //_gruben.add(new Field.point(4, 4));
     
     return _gruben;
   }
   List<Field> get erstelleGestank {
-    _gestank.add(new Field.point(1, 0));
-    _gestank.add(new Field.point(2, 1));
-    _gestank.add(new Field.point(3, 0));
+    //_gestank.add(new Field.point(1, 0));
+    //_gestank.add(new Field.point(2, 1));
+    //_gestank.add(new Field.point(3, 0));
     return _gestank;
   }
   
