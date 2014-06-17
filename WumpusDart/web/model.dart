@@ -67,7 +67,7 @@ class WumpusWelt {
    /**
       * Liefert den Spieler zurück
       */
-     Spieler get player => _spieler;
+     Spieler get spieler => _spieler;
      
      /**
       * Returns whether the game is over.
