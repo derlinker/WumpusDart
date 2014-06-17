@@ -7,8 +7,8 @@ class WumpusWelt {
   Spieler _spieler;
   int _size;
   int _level;
-  var _wumpus;
-  var _schatz;
+  Field _wumpus;
+  Field _schatz;
   List _gruben = new List<Field>();
   List _gestank = new List<Field>();
   List _luftzug = new List<Field>();
