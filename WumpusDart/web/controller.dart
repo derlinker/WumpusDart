@@ -43,16 +43,16 @@ class WumpusController {
       if (game.ingame) {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
-            game.player.links();
+            game.spieler.links();
             break;
           case KeyCode.RIGHT:
-            game.player.rechts();
+            game.spieler.rechts();
             break;
           case KeyCode.UP:
-            game.player.hoch();
+            game.spieler.hoch();
             break;
           case KeyCode.DOWN:
-            game.player.runter();
+            game.spieler.runter();
             break;
         }
         view.update(game);
