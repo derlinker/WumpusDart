@@ -60,7 +60,6 @@ class WumpusController {
     });
   }
 
-
   /**
     * Liefert das Spiel zurück
     */
