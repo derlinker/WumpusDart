@@ -40,7 +40,7 @@ class WumpusWelt {
    
    WumpusWelt(this._size, this._level) {
        //start();
-       _spieler._col = 0; _spieler._row = 0;
+       //_spieler._col = 0; _spieler._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
