@@ -133,7 +133,9 @@ class Field {
   int _row, _level;
   var _wumpus, _schatz;
   
-  var _gruben, _gestank, _luftzug = [];
+  List _gruben = new List<Field>();
+  List _gestank = new List<Field>();
+  List _luftzug = new List<Field>();
   
   Field(this._level){
     
