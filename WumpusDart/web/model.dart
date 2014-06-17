@@ -7,7 +7,9 @@ class WumpusWelt {
   Player _player;
   int _size, _level;
   var _wumpus, _schatz;
-  var _gruben, _gestank, _luftzug = [];
+  List _gruben = new List<Field>();
+  List _gestank = new List<Field>();
+  List _luftzug = new List<Field>();
 
   /**
     * Wenn das Spile gestopt wird, aufrufen
@@ -38,7 +40,7 @@ class WumpusWelt {
        //start();
        //_player._col = 0; _player._row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
-       _schatz = new Field(this._level).erstellSchatz;
+       _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
        _gestank = new Field(this._level).erstelleGestank;
        _luftzug = new Field(this._level).erstelleLuftzug;
@@ -142,16 +144,16 @@ class Field {
   
   
   List<Field> get erstelleGruben {
-    //_gruben.add(new Field.point(0, 3));
-    //_gruben.add(new Field.point(3, 3));
-    //_gruben.add(new Field.point(4, 4));
+    _gruben.add(new Field.point(0, 3));
+    _gruben.add(new Field.point(3, 3));
+    _gruben.add(new Field.point(4, 4));
     
     return _gruben;
   }
   List<Field> get erstelleGestank {
-    //_gestank.add(new Field.point(1, 0));
-    //_gestank.add(new Field.point(2, 1));
-    //_gestank.add(new Field.point(3, 0));
+    _gestank.add(new Field.point(1, 0));
+    _gestank.add(new Field.point(2, 1));
+    _gestank.add(new Field.point(3, 0));
     return _gestank;
   }
   
@@ -169,7 +171,7 @@ class Field {
     _wumpus = new Field.point(2,0);
     return _wumpus;
   }
-  Field get erstellSchatz {
+  Field get erstelleSchatz {
     _schatz = new Field.point(2,1);
     return _schatz;
   }
