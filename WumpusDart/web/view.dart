@@ -7,9 +7,9 @@ class WumpusView {
     
   var startbutton = querySelector('#start');
   var gewonnen = querySelector('#gewonnen');
-  var gameover = querySelector('#gameover');
   var level = querySelector('#level');
   var game = querySelector('.spielfeld');
+  var endebutton = querySelector('#ende');
  
   /**
    * Präsentiert das Model
@@ -51,12 +51,7 @@ class WumpusView {
    */
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Nächstes Level";
-   /* gameover.innerHtml = model.gameOver ? "Game Over" : "";
-    
-    if (model.gameOver) {
-      final onfield = model.spieler.notOnField ? "Sie haben das Spielfeld verlassen!<br>" : "";
-    }
-    */
+   
     // Aktualisiert das Feld
     final field = model.field;
     for (int row = 0; row < field.length; row++) {
