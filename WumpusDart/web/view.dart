@@ -1,17 +1,14 @@
 library view;
 
 import 'dart:html';
-import 'controller.dart';
 import 'model.dart';
 
 class WumpusView {
-  
-  var controller = new WumpusController();
-  
+    
   var startbutton = querySelector('#start');
   var gewonnen = querySelector('#gewonnen');
   var level = querySelector('#level');
-  var game = querySelector('#spielfeld');
+  var game = querySelector('.spielfeld');
  
   /**
    * Präsentiert das Model
@@ -54,10 +51,10 @@ class WumpusView {
   void update(WumpusWelt model) {
     
       startbutton.innerHtml = "Nächstes Level";
-      startbutton.style.display = "inline";
-      gewonnen.style.display = "inline";
+     // startbutton.style.display = "inline";
+     // gewonnen.style.display = "inline";
    
-    level.innerHtml = "Level: ${model.level}";
+   // level.innerHtml = "Level: ${model.level}";
     
     // Aktualisiert das Feld
     final field = model.field;
@@ -96,7 +93,7 @@ class WumpusView {
       for(int col = 0; col < field[row].length; col++) {
         final assignment = field[row][col];
         final position = "field_${row}_${col}";
-        table += "<td id = $position' class =$assignment'></td>";
+        table += "<td id = $position' class =$assignment> row: $row col: $col typ: $assignment  </td>";
       }
       table+= "</tr>";
     }

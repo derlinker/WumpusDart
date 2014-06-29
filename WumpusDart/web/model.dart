@@ -4,7 +4,7 @@ import "dart:html";
 class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
-  Spieler _spieler;
+  var _spieler;
   int _size;
   int _level;
   Field _wumpus;
@@ -39,8 +39,10 @@ class WumpusWelt {
    void stop() { _gamestatus == #stopped; }
    
    WumpusWelt(this._size, this._level) {
-       //start();
-       //_spieler._col = 0; _spieler._row = 0
+       //start();  
+       _spieler = new Spieler(this);
+       _spieler.col = 0;
+       _spieler.row = _size-1;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -51,14 +53,14 @@ class WumpusWelt {
    
    List<List<String>> get _field {
      var _field = new Iterable.generate(_size, (row) {
-       return new Iterable.generate(_size, (col) => "weg").toList();
+       return new Iterable.generate(_size, (col) => "level").toList();
      }).toList();
-     _gruben.forEach((w) => _field[w._row][w._col] = "grube");
-     _gestank.forEach((g) => _field[g._row][g._col] = "gestank");
-     _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
-     _field[_wumpus._row][_wumpus._col] = "_wumpus";
-     _field[_schatz._row][_schatz._col] = "_schatz";
-     _field[_spieler._row][_spieler._col] = "_player";
+      _gestank.forEach((ge) => _field[ge._row][ge._col] = "gestank");
+      _gruben.forEach((g) => _field[g._row][g._col] = "grube");
+      _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
+      _field[_wumpus._row][_wumpus._col] = "wumpus";
+      _field[_schatz._row][_schatz._col] = "schatz";
+      _field[_spieler.getrow][_spieler.getcol] = "spieler";
      return _field;
    }
    
@@ -73,8 +75,9 @@ class WumpusWelt {
       * Returns whether the game is over.
       * Game is over, when snake has left the field or is tangled.
       */
-    // bool get gameOver => 0; //TODO: Überprüfen!
-    
+
+     bool get gameOver => false; //TODO: Überprüfen!
+
     /**
      * Indicates whether the player is not on the field.
      */
@@ -84,10 +87,10 @@ class WumpusWelt {
      * Indicates whether the player is on field.
      */
     bool get onField {
-      return _spieler._row >= 0 &&
-          _spieler._row < this._size &&
-          _spieler._col >= 0 &&
-              _spieler._col < this._size;
+      return _spieler.getrow >= 0 &&
+          _spieler.getrow < this._size &&
+          _spieler.getcol >= 0 &&
+              _spieler.getcol < this._size;
     
      }
     
@@ -143,40 +146,41 @@ class Field {
     
   }
   
-  Field.point(this._col, this._row) {
+  Field.point(this._row, this._col) { 
   }
   
   
   List<Field> get erstelleGruben {
+    _gruben.add(new Field.point(1, 2));
     _gruben.add(new Field.point(0, 3));
-    _gruben.add(new Field.point(3, 3));
-    _gruben.add(new Field.point(4, 4));
+    _gruben.add(new Field.point(3, 2));
     
     return _gruben;
   }
   List<Field> get erstelleGestank {
-    _gestank.add(new Field.point(1, 0));
-    _gestank.add(new Field.point(2, 1));
-    _gestank.add(new Field.point(3, 0));
+    _gestank.add(new Field.point(1, 1));
+    _gestank.add(new Field.point(0, 0));
+    _gestank.add(new Field.point(2, 0));
+    
     return _gestank;
   }
   
   List<Field> get erstelleLuftzug {
-    _luftzug.add(new Field.point(0, 1));
-    _luftzug.add(new Field.point(0, 3));
-    _luftzug.add(new Field.point(1, 2));
-    _luftzug.add(new Field.point(2, 1));
-    _luftzug.add(new Field.point(2, 3));
-    _luftzug.add(new Field.point(3, 2));
+    _luftzug.add(new Field.point(1, 3));
+    _luftzug.add(new Field.point(0, 2));
+    _luftzug.add(new Field.point(1, 1));
+    _luftzug.add(new Field.point(3, 3));
+    _luftzug.add(new Field.point(2, 2));
+    _luftzug.add(new Field.point(3, 1));
     return _luftzug;
   }
   
   Field get erstelleWumpus {
-    _wumpus = new Field.point(2,0);
+    _wumpus = new Field.point(1,0);
     return _wumpus;
   }
   Field get erstelleSchatz {
-    _schatz = new Field.point(2,1);
+    _schatz = new Field.point(1,1);
     return _schatz;
   }
   
@@ -187,7 +191,7 @@ class Spieler{
   int _row;
   WumpusWelt _game;
   
-  Spieler(game){
+  Spieler(WumpusWelt game){
     this._game = game;
   }
 
@@ -205,6 +209,14 @@ class Spieler{
 
     void rechts() {
       _col++;
+    }
+    
+    int get getcol {
+      return this._col;
+    }
+    
+    int get getrow {
+      return this._row;
     }
   
     void set col(int col) { _col = col; }

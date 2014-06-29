@@ -8,7 +8,7 @@ class WumpusController {
   /**
    * Präsentiert das Model
    */
-  var game = new WumpusWelt(0, 0);
+  var game = new WumpusWelt(4, 1);
   /**
    * Präsentiert die View
    */
@@ -19,28 +19,24 @@ class WumpusController {
    * 
    */
   WumpusController() {
-    view.generateField(game);
     view.startbutton.onClick.listen((_) {
       if(game.finished){
-        game.lvl = game.lvl + 1;
+        game.level = game.level + 1;
       }
-      switch (game.lvl) {
+      switch (game.level) {
         case 1:
-          game = new WumpusWelt(8, 1);
-          break;
-        case 2:
-          game = new WumpusWelt(9, 2);
+          game = new WumpusWelt(4, 1);
           break;
       }
       view.generateField(game);
-      game.ingame = true;
+      //game.ingame = true;
       view.update(game);
     });
 
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-      if (game.ingame) {
+       
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
@@ -56,7 +52,7 @@ class WumpusController {
             break;
         }
         view.update(game);
-      }
+      
     });
   }
 
