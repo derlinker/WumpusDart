@@ -1,5 +1,6 @@
 library model;
 import "dart:html";
+const gamesize = 30;
 
 class WumpusWelt {
   //Status des Spiels
@@ -50,6 +51,10 @@ class WumpusWelt {
        _luftzug = new Field(this._level).erstelleLuftzug;
        //stop();
      }
+   
+   WumpusWelt1(this.gamesize){
+     
+   }
    
    List<List<String>> get _field {
      var _field = new Iterable.generate(_size, (row) {
@@ -196,19 +201,23 @@ class Spieler{
   }
 
     void hoch() {
-      _row--;
+      _row = -1;
+      _col = 0;
     }
 
     void runter() {
-      _row++;
+      _row = 1;
+      _col = 0;
     }
 
     void links() {
-      _col--;
+      _row = 0;
+      _col = -1;
     }
 
     void rechts() {
-      _col++;
+      _row = 0;
+      _col = 1;
     }
     
     int get getcol {

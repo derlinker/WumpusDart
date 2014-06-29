@@ -4,6 +4,7 @@ import 'dart:html';
 import 'model.dart';
 import 'view.dart';
 
+
 class WumpusController {
   /**
    * Präsentiert das Model
@@ -36,7 +37,7 @@ class WumpusController {
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-       
+      game = new WumpusWelt1(gamesize);
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
