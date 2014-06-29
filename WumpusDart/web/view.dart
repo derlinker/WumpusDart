@@ -60,6 +60,11 @@ class WumpusView {
           for(var s in field[row][col].split(' ')){
             td.classes.add('level');
             if (s == "spieler") td.classes.add('spieler');
+            if (s == "wumpus") td.classes.add('wumpus');
+            if (s == "grube") td.classes.add('grube');
+            if (s == "luftzug") td.classes.add('luftzug');
+            if (s == "schatz") td.classes.add('schatz');
+            if (s == "gestank") td.classes.add('gestank');
           }
         }
       }
