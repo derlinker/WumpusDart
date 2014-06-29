@@ -25,10 +25,7 @@ class WumpusController {
       }
       switch (game.level) {
         case 1:
-          game = new WumpusWelt(8, 1);
-          break;
-        case 2:
-          game = new WumpusWelt(9, 2);
+          game = new WumpusWelt(4, 1);
           break;
       }
       view.generateField(game);
