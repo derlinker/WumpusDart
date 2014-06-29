@@ -1,5 +1,4 @@
 library model;
-import "dart:html";
 const gamesize = 30;
 
 class WumpusWelt {
@@ -52,20 +51,16 @@ class WumpusWelt {
        //stop();
      }
    
-   WumpusWelt1(this.gamesize){
-     
-   }
-   
    List<List<String>> get _field {
      var _field = new Iterable.generate(_size, (row) {
        return new Iterable.generate(_size, (col) => "level").toList();
      }).toList();
-      _gestank.forEach((ge) => _field[ge._row][ge._col] = "gestank");
-      _gruben.forEach((g) => _field[g._row][g._col] = "grube");
-      _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
-      _field[_wumpus._row][_wumpus._col] = "wumpus";
-      _field[_schatz._row][_schatz._col] = "schatz";
-      _field[_spieler.getrow][_spieler.getcol] = "spieler";
+      _gestank.forEach((ge) => _field[ge._row][ge._col] += " gestank");
+      _gruben.forEach((g) => _field[g._row][g._col] += " grube");
+      _luftzug.forEach((l) => _field[l._row][l._col] += " luftzug");
+      _field[_wumpus._row][_wumpus._col] += " wumpus";
+      _field[_schatz._row][_schatz._col] += " schatz";
+      _field[_spieler.getrow][_spieler.getcol] += " spieler";
      return _field;
    }
    

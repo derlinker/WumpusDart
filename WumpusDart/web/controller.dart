@@ -37,7 +37,7 @@ class WumpusController {
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-      game = new WumpusWelt1(gamesize);
+      game = new WumpusWelt(4,1);
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
