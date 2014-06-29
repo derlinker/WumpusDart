@@ -30,7 +30,6 @@ class WumpusController {
           break;
       }
       view.generateField(game);
-      //game.ingame = true;
       view.update(game);
     });
 
@@ -41,15 +40,19 @@ class WumpusController {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
+            print("Links wurde gedrückt.");
             break;
           case KeyCode.RIGHT:
             game.spieler.rechts();
+            print("Rechts wurde gedrückt.");
             break;
           case KeyCode.UP:
             game.spieler.hoch();
+            print("Hoch wurde gedrückt.");
             break;
           case KeyCode.DOWN:
             game.spieler.runter();
+            print("Runter wurde gedrückt.");
             break;
         }
         view.update(game);

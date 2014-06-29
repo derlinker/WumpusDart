@@ -79,22 +79,25 @@ td {
    margin: auto;
 }
 
-.spieler  {
+.level { 
+ background-color: green; 
+}
+.level.spieler  {
   background-image: url(img/player.png);
 }
-.grube {
+.level.grube {
   background-color: red !important;
 }
-.wumpus {
+.level.wumpus {
   backgound-color: blue;
 }
-.luftzug  {
+.level.luftzug  {
   background-color: black;
 }
-.gestank  {
+.level.gestank  {
   background-color: yellow;
 }
-.schatz {
+.level.schatz {
   background-color: gold;
 }
 .level { 
