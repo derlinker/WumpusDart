@@ -38,7 +38,6 @@ class WumpusWelt {
    void stop() { _gamestatus == #stopped; }
    
    WumpusWelt(this._size, this._level) {
-       //start();  
        _spieler = new Spieler(this);
        _spieler.col = 0;
        _spieler.row = _size-1;
@@ -47,7 +46,6 @@ class WumpusWelt {
        _gruben = new Field(this._level).erstelleGruben;
        _gestank = new Field(this._level).erstelleGestank;
        _luftzug = new Field(this._level).erstelleLuftzug;
-       //stop();
      }
    
    List<List<String>> get _field {
