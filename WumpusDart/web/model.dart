@@ -195,23 +195,19 @@ class Spieler{
   }
 
     void hoch() {
-      _row = -1;
-      _col = 0;
+      _row--;
     }
 
     void runter() {
-      _row = 1;
-      _col = 0;
+      _row++;
     }
 
     void links() {
-      _row = 0;
-      _col = -1;
+      _col--;
     }
 
     void rechts() {
-      _row = 0;
-      _col = 1;
+      _col++;
     }
     
     int get getcol {
