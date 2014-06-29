@@ -8,7 +8,7 @@ class WumpusController {
   /**
    * Präsentiert das Model
    */
-  var game = new WumpusWelt(0, 0);
+  var game = new WumpusWelt(1, 4);
   /**
    * Präsentiert die View
    */

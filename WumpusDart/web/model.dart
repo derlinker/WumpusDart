@@ -4,7 +4,7 @@ import "dart:html";
 class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
-  Spieler _spieler;
+  var _spieler;
   int _size;
   int _level;
   Field _wumpus;
@@ -39,8 +39,10 @@ class WumpusWelt {
    void stop() { _gamestatus == #stopped; }
    
    WumpusWelt(this._size, this._level) {
-       //start();
-       //_spieler._col = 0; _spieler._row = 0
+       //start();  
+       _spieler = new Spieler(this);
+       _spieler.col = 0;
+       _spieler.row = 0;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -51,14 +53,15 @@ class WumpusWelt {
    
    List<List<String>> get _field {
      var _field = new Iterable.generate(_size, (row) {
-       return new Iterable.generate(_size, (col) => "weg").toList();
+       return new Iterable.generate(_size, (col) => "level").toList();
      }).toList();
-     _gruben.forEach((w) => _field[w._row][w._col] = "grube");
-     _gestank.forEach((g) => _field[g._row][g._col] = "gestank");
-     _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
-     _field[_wumpus._row][_wumpus._col] = "_wumpus";
-     _field[_schatz._row][_schatz._col] = "_schatz";
-     _field[_spieler._row][_spieler._col] = "_player";
+      _gestank.forEach((ge) => _field[ge._row][ge._col] = "gestank");
+      _gruben.forEach((g) => _field[g._row][g._col] = "grube");
+      
+      _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
+      _field[_wumpus._row][_wumpus._col] = "wumpus";
+      _field[_schatz._row][_schatz._col] = "schatz";
+      _field[_spieler.getrow][_spieler.getcol] = "player";
      return _field;
    }
    
@@ -205,6 +208,14 @@ class Spieler{
 
     void rechts() {
       _col++;
+    }
+    
+    int get getcol {
+      return this._col;
+    }
+    
+    int get getrow {
+      return this._row;
     }
   
     void set col(int col) { _col = col; }

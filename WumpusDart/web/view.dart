@@ -1,13 +1,10 @@
 library view;
 
 import 'dart:html';
-import 'controller.dart';
 import 'model.dart';
 
 class WumpusView {
-  
-  var controller = new WumpusController();
-  
+    
   var startbutton = querySelector('#start');
   var gewonnen = querySelector('#gewonnen');
   var level = querySelector('#level');
