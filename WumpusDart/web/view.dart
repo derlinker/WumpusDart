@@ -54,7 +54,7 @@ class WumpusView {
       startbutton.style.display = "inline";
       gewonnen.style.display = "inline";
    
-    level.innerHtml = "Level: ${model.level}";
+   // level.innerHtml = "Level: ${model.level}";
     
     // Aktualisiert das Feld
     final field = model.field;

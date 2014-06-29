@@ -21,9 +21,9 @@ class WumpusController {
   WumpusController() {
     view.startbutton.onClick.listen((_) {
       if(game.finished){
-        game.lvl = game.lvl + 1;
+        game.level = game.level + 1;
       }
-      switch (game.lvl) {
+      switch (game.level) {
         case 1:
           game = new WumpusWelt(8, 1);
           break;
