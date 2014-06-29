@@ -60,7 +60,7 @@ class WumpusWelt {
       _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
       _field[_wumpus._row][_wumpus._col] = "wumpus";
       _field[_schatz._row][_schatz._col] = "schatz";
-      _field[_spieler.getrow][_spieler.getcol] = "player";
+      _field[_spieler.getrow][_spieler.getcol] = "spieler";
      return _field;
    }
    

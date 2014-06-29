@@ -71,7 +71,6 @@ td {
   border-collapse: separate;
   padding: 5px;
   text-align: center;
-  background-color: grey;
   width: 80px;
   height: 80px;
 }
@@ -88,4 +87,9 @@ td:hover {
 
 .grube {
   background-color: red !important;
+}
+
+.level { 
+ background-color: blue; 
+  
 }
