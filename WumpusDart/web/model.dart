@@ -52,8 +52,8 @@ class WumpusWelt {
      }
    
    List<List<String>> get _field {
-     var _field = new Iterable.generate(_size+1, (row) {
-       return new Iterable.generate(_size+1, (col) => "level").toList();
+     var _field = new Iterable.generate(_size, (row) {
+       return new Iterable.generate(_size, (col) => "level").toList();
      }).toList();
       _gestank.forEach((ge) => _field[ge._row][ge._col] = "gestank");
       _gruben.forEach((g) => _field[g._row][g._col] = "grube");
