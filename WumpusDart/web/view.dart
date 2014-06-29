@@ -61,13 +61,14 @@ class WumpusView {
           td.classes.clear();
           for(var s in field[row][col].split(' ')){
             td.classes.add('level');
-            if (s == "spieler") td.classes.add('spieler');
-            if (s == "wumpus") td.classes.add('wumpus');
-            if (s == "grube") td.classes.add('grube');
-            if (s == "luftzug") td.classes.add('luftzug');
-            if (s == "schatz") td.classes.add('schatz');
-            if (s == "gestank") td.classes.add('gestank');
+            if (s == "spieler"){ td.classes.add('spieler'); td.innerHtml = "Spieler"; }
+            if (s == "wumpus"){ td.classes.add('wumpus'); td.innerHtml = "Hier ist der Wumpus"; }
+            if (s == "grube"){ td.classes.add('grube'); td.innerHtml = "eine Grube";}
+            if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "du spürst einen Luftzug<";}
+            if (s == "schatz"){ td.classes.add('schatz'); td.innerHtml = "eine Kiste voller Gold";}
+            if (s == "gestank"){ td.classes.add('gestank'); td.innerHtml = "du riechst einen Gestank";}
           }
+          if (field[row][col] == "level"){ td.innerHtml = "";}
         }
       }
     }
@@ -98,7 +99,7 @@ class WumpusView {
       for(int col = 0; col < field[row].length; col++) {
         final assignment = field[row][col];
         final position = "field_${row}_${col}";
-        table += "<td id = $position class = '$assignment'> row: $row col: $col typ: $assignment  </td>";
+        table += "<td id = $position class = '$assignment'></td>";
       }
       table+= "</tr>";
     }

@@ -78,15 +78,14 @@ td {
 .spielfeld {
    margin: auto;
 }
-
 .level { 
- background-color: green; 
+ background-color: white; 
 }
 .level.spieler  {
-  background-image: url(img/player.png) !important;
+  background-image: green;
 }
 .level.grube {
-  background-color: red !important;
+  background-color: red ;
 }
 .level.wumpus {
   background-color: blue;
@@ -99,7 +98,4 @@ td {
 }
 .level.schatz {
   background-color: gold;
-}
-.level { 
- background-color: green; 
 }
