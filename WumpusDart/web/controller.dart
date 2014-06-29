@@ -19,7 +19,6 @@ class WumpusController {
    * 
    */
   WumpusController() {
-    view.generateField(game);
     view.startbutton.onClick.listen((_) {
       if(game.finished){
         game.lvl = game.lvl + 1;
