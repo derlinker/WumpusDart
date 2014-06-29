@@ -49,20 +49,15 @@ class WumpusView {
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    
-      startbutton.innerHtml = "Nächstes Level";
-     // startbutton.style.display = "inline";
-     // gewonnen.style.display = "inline";
-   
-   // level.innerHtml = "Level: ${model.level}";
-    
+    startbutton.innerHtml = "Nächstes Level";
     // Aktualisiert das Feld
     final field = model.field;
     for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
-        final td = game.querySelector("#field_${row}_${col}");
+        final td = game.querySelector("#level_${row}_${col}");
         if (td != null) {
           td.classes.clear();
+          if (field[row][col] == "spieler") td.classes.add('spieler');
         }
       }
     }

@@ -56,7 +56,6 @@ class WumpusController {
             break;
         }
         view.update(game);
-      
     });
   }
 
