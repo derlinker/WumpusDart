@@ -71,7 +71,6 @@ td {
   border-collapse: separate;
   padding: 5px;
   text-align: center;
-  background-color: grey;
   width: 80px;
   height: 80px;
 }
@@ -89,3 +88,8 @@ td {
 .wumpus:hover {
   backgound-color: black;
 } 
+
+.level { 
+ background-color: blue; 
+  
+}
