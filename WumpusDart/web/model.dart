@@ -73,7 +73,7 @@ class WumpusWelt {
       * Returns whether the game is over.
       * Game is over, when snake has left the field or is tangled.
       */
-     bool get gameOver => 0; //TODO: Überprüfen!
+    // bool get gameOver => 0; //TODO: Überprüfen!
     
     /**
      * Indicates whether the player is not on the field.
