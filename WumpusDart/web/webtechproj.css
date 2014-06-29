@@ -82,14 +82,21 @@ td {
 .spieler  {
   background-image: url(img/player.png);
 }
-.grube' {
+.grube {
   background-color: red !important;
 }
-.wumpus:hover {
-  backgound-color: black;
-} 
-
+.wumpus {
+  backgound-color: blue;
+}
+.luftzug  {
+  background-color: black;
+}
+.gestank  {
+  background-color: yellow;
+}
+.schatz {
+  background-color: gold;
+}
 .level { 
- background-color: blue; 
-  
+ background-color: green; 
 }
