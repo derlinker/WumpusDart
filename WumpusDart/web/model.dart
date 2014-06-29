@@ -151,8 +151,8 @@ class Field {
   
   List<Field> get erstelleGruben {
     _gruben.add(new Field.point(0, 3));
+    _gruben.add(new Field.point(2, 2));
     _gruben.add(new Field.point(3, 3));
-    _gruben.add(new Field.point(4, 4));
     
     return _gruben;
   }
