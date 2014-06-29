@@ -52,12 +52,11 @@ class WumpusWelt {
      }
    
    List<List<String>> get _field {
-     var _field = new Iterable.generate(_size, (row) {
-       return new Iterable.generate(_size, (col) => "level").toList();
+     var _field = new Iterable.generate(_size+1, (row) {
+       return new Iterable.generate(_size+1, (col) => "level").toList();
      }).toList();
       _gestank.forEach((ge) => _field[ge._row][ge._col] = "gestank");
       _gruben.forEach((g) => _field[g._row][g._col] = "grube");
-      
       _luftzug.forEach((l) => _field[l._row][l._col] = "luftzug");
       _field[_wumpus._row][_wumpus._col] = "wumpus";
       _field[_schatz._row][_schatz._col] = "schatz";
@@ -76,7 +75,7 @@ class WumpusWelt {
       * Returns whether the game is over.
       * Game is over, when snake has left the field or is tangled.
       */
-     bool get gameOver => 0; //TODO: Überprüfen!
+     bool get gameOver => false; //TODO: Überprüfen!
     
     /**
      * Indicates whether the player is not on the field.
@@ -190,7 +189,7 @@ class Spieler{
   int _row;
   WumpusWelt _game;
   
-  Spieler(game){
+  Spieler(WumpusWelt game){
     this._game = game;
   }
 

@@ -8,7 +8,7 @@ class WumpusView {
   var startbutton = querySelector('#start');
   var gewonnen = querySelector('#gewonnen');
   var level = querySelector('#level');
-  var game = querySelector('#spielfeld');
+  var game = querySelector('.spielfeld');
  
   /**
    * Präsentiert das Model
