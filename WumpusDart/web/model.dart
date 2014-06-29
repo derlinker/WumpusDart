@@ -1,5 +1,4 @@
 library model;
-const gamesize = 30;
 
 class WumpusWelt {
   //Status des Spiels
