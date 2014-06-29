@@ -32,14 +32,14 @@ class WumpusController {
           break;
       }
       view.generateField(game);
-      game.ingame = true;
+      //game.ingame = true;
       view.update(game);
     });
 
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-      if (game.ingame) {
+      if (game) {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();

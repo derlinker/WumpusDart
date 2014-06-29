@@ -51,8 +51,8 @@ class WumpusView {
   void update(WumpusWelt model) {
     
       startbutton.innerHtml = "Nächstes Level";
-      startbutton.style.display = "inline";
-      gewonnen.style.display = "inline";
+     // startbutton.style.display = "inline";
+     // gewonnen.style.display = "inline";
    
    // level.innerHtml = "Level: ${model.level}";
     
