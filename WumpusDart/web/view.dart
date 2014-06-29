@@ -56,7 +56,7 @@ class WumpusView {
       for (int col = 0; col < field[row].length; col++) {
         final td = game.querySelector("#field_${row}_${col}");
         if (td != null) {
-          td.classes.clear();
+          //td.classes.clear();
          //if (field[row][col] == "spieler") td.classes.add('spieler');
           for(var s in field[row][col].split(' ')){
             if (s == "spieler") td.classes.add('spieler');
