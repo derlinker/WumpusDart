@@ -42,7 +42,7 @@ class WumpusWelt {
        //start();  
        _spieler = new Spieler(this);
        _spieler.col = 0;
-       _spieler.row = 0;
+       _spieler.row = _size-1;
        _wumpus = new Field(this._level).erstelleWumpus;
        _schatz = new Field(this._level).erstelleSchatz;
        _gruben = new Field(this._level).erstelleGruben;
@@ -145,40 +145,41 @@ class Field {
     
   }
   
-  Field.point(this._col, this._row) {
+  Field.point(this._row, this._col) { 
   }
   
   
   List<Field> get erstelleGruben {
+    _gruben.add(new Field.point(1, 2));
     _gruben.add(new Field.point(0, 3));
-    _gruben.add(new Field.point(2, 2));
-    _gruben.add(new Field.point(3, 3));
+    _gruben.add(new Field.point(3, 2));
     
     return _gruben;
   }
   List<Field> get erstelleGestank {
-    _gestank.add(new Field.point(1, 0));
-    _gestank.add(new Field.point(2, 1));
-    _gestank.add(new Field.point(3, 0));
+    _gestank.add(new Field.point(1, 1));
+    _gestank.add(new Field.point(0, 0));
+    _gestank.add(new Field.point(2, 0));
+    
     return _gestank;
   }
   
   List<Field> get erstelleLuftzug {
-    _luftzug.add(new Field.point(0, 1));
-    _luftzug.add(new Field.point(0, 3));
-    _luftzug.add(new Field.point(1, 2));
-    _luftzug.add(new Field.point(2, 1));
-    _luftzug.add(new Field.point(2, 3));
-    _luftzug.add(new Field.point(3, 2));
+    _luftzug.add(new Field.point(1, 3));
+    _luftzug.add(new Field.point(0, 2));
+    _luftzug.add(new Field.point(1, 1));
+    _luftzug.add(new Field.point(3, 3));
+    _luftzug.add(new Field.point(2, 2));
+    _luftzug.add(new Field.point(3, 1));
     return _luftzug;
   }
   
   Field get erstelleWumpus {
-    _wumpus = new Field.point(2,0);
+    _wumpus = new Field.point(1,0);
     return _wumpus;
   }
   Field get erstelleSchatz {
-    _schatz = new Field.point(2,1);
+    _schatz = new Field.point(1,1);
     return _schatz;
   }
   
