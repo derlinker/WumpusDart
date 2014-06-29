@@ -83,7 +83,7 @@ td {
  background-color: green; 
 }
 .level.spieler  {
-  background-image: url(img/player.png);
+  background-image: url(img/player.png) !important;
 }
 .level.grube {
   background-color: red !important;
