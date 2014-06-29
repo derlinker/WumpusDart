@@ -28,6 +28,9 @@ class WumpusController {
         case 1:
           game = new WumpusWelt(4, 1);
           break;
+        case 2:
+          game = new WumpusWelt(4, 1);
+          break;
       }
       view.generateField(game);
       view.update(game);
