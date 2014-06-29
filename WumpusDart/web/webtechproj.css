@@ -76,16 +76,16 @@ td {
   height: 80px;
 }
 
-
-td:hover {
-  background-color: yellow;
-  
-}
-
 .spielfeld {
    margin: auto;
 }
 
-.grube {
+.spieler  {
+  background-image: url(img/player.png);
+}
+.grube' {
   background-color: red !important;
 }
+.wumpus:hover {
+  backgound-color: black;
+} 
