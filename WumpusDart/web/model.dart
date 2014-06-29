@@ -97,38 +97,6 @@ class WumpusWelt {
      * Returns the level of the game. The game is played on a nxn-field.
      */
     int get level => _level;
-   
-   //Derzeit nicht benutzt
-
-   /**
-   List<Field> loadlevel(level){
-     int x, y;
-     List<Field> fields;
-    /**
-     final level_file = new File(level + '.txt');
-     
-     String input = level_file.openRead().toString();
-    */
-     
-     String url = "level/1.txt";  
-     HttpRequest request = new HttpRequest();
-     request.open("GET", url, async : true);
-     List<String> list = request.toString().split(';');
-     var _size = list.first;
-     for(x = 1; x <= _size; x++ ){
-       for(y = 1; y <= _size; y++ ){
-         var field = new Field(x, y, list.elementAt(x*y).split(','));
-         fields.add(field);
-       }
-     }
-     return fields;
-   }
-   
-   void test(){
-     var game = new WumpusWelt(1);
-     
-     print(game.loadlevel(1));
-}*/
 }
 
 class Field {
