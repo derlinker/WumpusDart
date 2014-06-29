@@ -57,7 +57,7 @@ class WumpusView {
         final td = game.querySelector("#field_${row}_${col}");
         if (td != null) {
           td.classes.clear();
-          if (field[row][col] == "spieler") td.classes.add('spieler');
+          //if (field[row][col] == "spieler") td.classes.add('spieler');
         }
       }
     }
@@ -88,7 +88,7 @@ class WumpusView {
       for(int col = 0; col < field[row].length; col++) {
         final assignment = field[row][col];
         final position = "field_${row}_${col}";
-        table += "<td id = $position' class ='$assignment'> row: $row col: $col typ: $assignment  </td>";
+        table += "<td id = $position class = $assignment> row: $row col: $col typ: $assignment  </td>";
       }
       table+= "</tr>";
     }
