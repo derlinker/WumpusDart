@@ -25,7 +25,7 @@ class WumpusController {
       }
       switch (game.level) {
         case 1:
-          game = new WumpusWelt(4, 1);
+          game = new WumpusWelt(5, 1);
           break;
       }
       view.generateField(game);
@@ -36,7 +36,7 @@ class WumpusController {
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-      if (game) {
+       
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
@@ -52,7 +52,7 @@ class WumpusController {
             break;
         }
         view.update(game);
-      }
+      
     });
   }
 

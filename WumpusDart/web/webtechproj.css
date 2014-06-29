@@ -85,3 +85,6 @@ td:hover {
 .spielfeld {
    margin: auto;
 }
+td._grube {
+  background = red;
+}
