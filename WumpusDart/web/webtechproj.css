@@ -81,21 +81,18 @@ td {
 .level { 
  background-color: white; 
 }
-.level.spieler  {
-  background-image: green;
-}
 .level.grube {
-  background-color: red ;
+  background-color: #401E05 ;
 }
 .level.wumpus {
-  background-color: blue;
+  background-color: #FF6B00;
 }
 .level.luftzug  {
-  background-color: black;
+  background-color: #17D5C2;
 }
 .level.gestank  {
-  background-color: yellow;
+  background-color: #17D52D;
 }
 .level.schatz {
-  background-color: gold;
+  background-color: #C59E02;
 }

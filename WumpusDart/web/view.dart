@@ -64,7 +64,7 @@ class WumpusView {
             if (s == "spieler"){ td.classes.add('spieler'); td.innerHtml = "Spieler"; }
             if (s == "wumpus"){ td.classes.add('wumpus'); td.innerHtml = "Hier ist der Wumpus"; }
             if (s == "grube"){ td.classes.add('grube'); td.innerHtml = "eine Grube";}
-            if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "du spürst einen Luftzug<";}
+            if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "du spürst einen Luftzug";}
             if (s == "schatz"){ td.classes.add('schatz'); td.innerHtml = "eine Kiste voller Gold";}
             if (s == "gestank"){ td.classes.add('gestank'); td.innerHtml = "du riechst einen Gestank";}
           }
