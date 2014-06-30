@@ -37,6 +37,7 @@ class WumpusWelt {
     */
    void stop() { _gamestatus == #stopped; }
    
+   
    WumpusWelt(this._size, this._level) {
        _spieler = new Spieler(this);
        _spieler.col = 0;
@@ -73,7 +74,7 @@ class WumpusWelt {
       * Game is over, when snake has left the field or is tangled.
       */
 
-     bool get gameOver => false; //TODO: Überprüfen!
+     //bool get gameOver => false; //TODO: Überprüfen!
 
     /**
      * Indicates whether the player is not on the field.
@@ -116,37 +117,117 @@ class Field {
   
   
   List<Field> get erstelleGruben {
-    _gruben.add(new Field.point(1, 2));
-    _gruben.add(new Field.point(0, 3));
-    _gruben.add(new Field.point(3, 2));
-    
+    switch(_level) {
+      case 1:
+        level1Gruben();
+        break;
+      case 2:
+        level2Gruben();
+        break;
+    }
     return _gruben;
   }
+    
+    void level1Gruben() {
+      _gruben.add(new Field.point(1, 2));
+      _gruben.add(new Field.point(0, 3));
+      _gruben.add(new Field.point(3, 2));
+    }
+    void level2Gruben() {
+      _gruben.add(new Field.point(3, 1));
+      _gruben.add(new Field.point(3, 2));
+      _gruben.add(new Field.point(3, 3));
+    }
+    
   List<Field> get erstelleGestank {
+    switch(_level)  {
+      case 1:
+        level1Gestank();
+        break;
+      case 2:
+        level2Gestank();
+        break;
+    }
+    return _gestank;
+  }
+  void level1Gestank(){
     _gestank.add(new Field.point(1, 1));
     _gestank.add(new Field.point(0, 0));
     _gestank.add(new Field.point(2, 0));
-    
-    return _gestank;
   }
+  void level2Gestank(){
+    _gestank.add(new Field.point(1, 1));
+    _gestank.add(new Field.point(0, 0));
+    _gestank.add(new Field.point(2, 0));
+  }
+    
   
   List<Field> get erstelleLuftzug {
+    switch(_level)  {
+      case 1:
+        level1Luftzug();
+        break;
+      case 2:
+        level2Luftzug();
+        break;
+    }
+    return _luftzug;
+  }
+  
+  void level1Luftzug(){
     _luftzug.add(new Field.point(1, 3));
     _luftzug.add(new Field.point(0, 2));
     _luftzug.add(new Field.point(1, 1));
     _luftzug.add(new Field.point(3, 3));
     _luftzug.add(new Field.point(2, 2));
     _luftzug.add(new Field.point(3, 1));
-    return _luftzug;
   }
   
+  void level2Luftzug(){
+      _luftzug.add(new Field.point(1, 3));
+      _luftzug.add(new Field.point(0, 2));
+      _luftzug.add(new Field.point(1, 1));
+      _luftzug.add(new Field.point(3, 3));
+      _luftzug.add(new Field.point(2, 2));
+      _luftzug.add(new Field.point(3, 1));
+    }
+  
   Field get erstelleWumpus {
-    _wumpus = new Field.point(1,0);
+    switch(_level){
+      case 1:
+        level1Wumpus();
+        break;
+      case 2:
+        level2Wumpus();
+        break;
+      }
     return _wumpus;
+   }
+  void level1Wumpus(){
+    _wumpus = new Field.point(1,0);
   }
+  
+  void level2Wumpus(){
+    _wumpus = new Field.point(2,0);
+  }
+  
   Field get erstelleSchatz {
-    _schatz = new Field.point(1,1);
+    switch(_level)  {
+      case 1:
+        level1Schatz();
+        break;
+      case 2:
+        level2Schatz();
+        break;
+    }
     return _schatz;
+  }
+  void level1Schatz(){
+    _schatz = new Field.point(1,1);
+  }
+  
+  void level2Schatz(){
+    _schatz = new Field.point(1,1);
   }
   
 }
@@ -159,6 +240,7 @@ class Spieler{
   Spieler(WumpusWelt game){
     this._game = game;
   }
+  
 
     void hoch() {
       _row--;
