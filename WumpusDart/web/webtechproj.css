@@ -20,16 +20,17 @@ h1 {
   padding: 0px 0px 100px 0px;
 }
 
-ul li {
+li {
     list-style-type: none;
 }
 
 .menu{
-	float: left;
-	margin-right: 350px;
+	float: top;
+	list-style-position: outside;
 }
 
 .menu .name {
+  list-style-position: inside;
 	font-weight: bold;
 }
 
@@ -114,8 +115,8 @@ ul li {
   border-radius: 20px;
   padding: 5px;
   text-align: center;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 /*

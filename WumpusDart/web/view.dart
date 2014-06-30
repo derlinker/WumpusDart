@@ -25,9 +25,9 @@ class WumpusView {
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Neustart";
     if(model.spielstatus == 1){
-      gameover.innerHtml = "Gewonnen ";
+      gameover.innerHtml = "Sie haben Gewonnen!";
     }else if(model.spielstatus == 2){
-      gameover.innerHtml = "Verloren ";
+      gameover.innerHtml = "Game Over";
     }else gameover.innerHtml = "";
     
     // Aktualisiert das Feld
@@ -53,22 +53,22 @@ class WumpusView {
             }
             if (s == "grube") {
               td.classes.add('grube');
-              td.innerHtml = "grube ";
+              td.innerHtml = "Eine Tiefe Grube für den ";
               td.style.color = "white";
             }
             if (s == "luftzug") {
               td.classes.add('luftzug');
-              td.innerHtml = "luftzug ";
+              td.innerHtml = "Ein Luftzug spürt der ";
               td.style.color = "white";
             }
             if (s == "schatz") {
               td.classes.add('schatz');
-              td.innerHtml = "schatz ";
+              td.innerHtml = "Goldtruhe findet der ";
               td.style.color = "white";
             }
             if (s == "gestank") {
               td.classes.add('gestank');
-              td.innerHtml = "gestank ";
+              td.innerHtml = "Ein Geruch für den  ";
               td.style.color = "white";
             }
           }
