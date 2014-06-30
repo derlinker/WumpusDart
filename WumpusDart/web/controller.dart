@@ -64,5 +64,5 @@ class WumpusController {
   /**
     * Liefert das Spiel zurück
     */
-   WumpusWelt get spiel => game;
+   //WumpusWelt get spiel => game;
 }
