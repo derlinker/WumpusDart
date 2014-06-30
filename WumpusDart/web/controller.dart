@@ -38,6 +38,7 @@ class WumpusController {
     // EinstellungsButton wird gedrückt
     view.einstellungen.onClick.listen((_){
       //TODO!
+      print("Einstellungen wurden gedrückt!");
     });
     // EndeButton wird gedrückt
     view.endebutton.onClick.listen((_){

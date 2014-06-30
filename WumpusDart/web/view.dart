@@ -3,14 +3,16 @@ library view;
 import 'dart:html';
 import 'model.dart';
 
-class WumpusView {
-    
+
+class WumpusView {    
   var startbutton = querySelector('#start');
+  var gameover = querySelector('#gameover');
   var gewonnen = querySelector('#gewonnen');
   var einstellungen = querySelector('#einstellungen');
   var level = querySelector('#level');
   var game = querySelector('.spielfeld');
   var endebutton = querySelector('#ende');
+  var ausgabe = querySelector('#ausgabe');
  
   /**
    * Präsentiert das Model
@@ -43,17 +45,12 @@ class WumpusView {
   HtmlElement get startButton => querySelector('#start');
   */
   
-  
-  
-  
-  
   /**
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    
-    
     startbutton.innerHtml = "Nächstes Level";
+    gameover.innerHtml = model.gameOver ? "Game Over" : "";
     
     // Aktualisiert das Feld
     final field = model.field;
