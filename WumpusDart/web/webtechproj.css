@@ -84,13 +84,14 @@ td {
  background-color: white; 
 }
 .level.grube {
-  background-color: #401E05 ;
+  /**background-color: #401E05 ;*/
 }
 .level.wumpus {
-  background-color: #FF6B00;
+  /**background-color: #FF6B00;*/
+  visability: hidden;
 }
 .level.luftzug  {
-  background-color: #17D5C2;
+  /**background-color: #17D5C2;*/
 }
 .level.gestank  {
   background-color: #17D52D;

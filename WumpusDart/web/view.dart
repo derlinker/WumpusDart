@@ -54,7 +54,7 @@ class WumpusView {
     
     // Aktualisiert das Feld
     final field = model.field;
-    for (int row = 0; row < field.length; row++) {
+    /**for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
         final td = game.querySelector("#field_${row}_${col}");
         if (td != null) {
@@ -71,7 +71,34 @@ class WumpusView {
           if (field[row][col] == "level"){ td.innerHtml = "";}
         }
       }
-    }
+    }*/
+    
+    for (int row = 0; row < field.length; row++) {
+          for (int col = 0; col < field[row].length; col++) {
+            final td = game.querySelector("#field_${row}_${col}");
+            if (td != null) {
+              td.classes.clear();
+              for(var s in field[row][col].split(' ')){
+                td.classes.add('level');
+                if (s == "spieler"){ 
+                  td.classes.add('spieler'); 
+                  td.innerHtml = "Spieler";
+                  }
+                if (s == "wumpus"){ 
+                  td.classes.add('wumpus'); 
+                  if( s == "spieler"){
+                    td.classes.add('spieler');
+                  }
+                  td.innerHtml = "Spieler ist TOT";}
+                if (s == "grube"){ td.classes.add('grube'); td.innerHtml = "";}
+                if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "";}
+                if (s == "schatz"){ td.classes.add('schatz'); td.innerHtml = "";}
+                if (s == "gestank"){ td.classes.add('gestank'); td.innerHtml = "";}
+              }
+              if (field[row][col] == "level"){ td.innerHtml = "";}
+            }
+          }
+        }
     
     //gameover.innerHtml = model.gameOver ? "Game Over" : "";
     
