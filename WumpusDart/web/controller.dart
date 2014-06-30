@@ -20,11 +20,11 @@ class WumpusController {
    * 
    */
   WumpusController() {
+    //StartButton wird gedrückt
     view.startbutton.onClick.listen((_) {
-      if(game.finished){
-        game.level = game.level + 1;
-      }
-      switch (game.level) {
+    game.level = game.level + 1;
+
+    switch (game.level) {
         case 1:
           game = new WumpusWelt(4, 1);
           break;
@@ -35,40 +35,34 @@ class WumpusController {
       view.generateField(game);
       view.update(game);
     });
-    
+    // EinstellungsButton wird gedrückt
+    view.einstellungen.onClick.listen((_){
+      //TODO!
+    });
+    // EndeButton wird gedrückt
     view.endebutton.onClick.listen((_){
       game.stop();
       print("Das Spiel wurde beendet!");
       view.update(game);
     });
 
-
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
-            print("Links wurde gedrückt.");
             break;
           case KeyCode.RIGHT:
             game.spieler.rechts();
-            print("Rechts wurde gedrückt.");
             break;
           case KeyCode.UP:
             game.spieler.hoch();
-            print("Hoch wurde gedrückt.");
             break;
           case KeyCode.DOWN:
             game.spieler.runter();
-            print("Runter wurde gedrückt.");
             break;
         }
         view.update(game);
     });
   }
-
-  /**
-    * Liefert das Spiel zurück
-    */
-   //WumpusWelt get spiel => game;
 }

@@ -3,7 +3,7 @@ library model;
 class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
-  var _spieler;
+  var _spieler, _gewonnen;
   int _size;
   int _level;
   Field _wumpus;
@@ -36,6 +36,14 @@ class WumpusWelt {
     * Stops the game.
     */
    void stop() { _gamestatus == #stopped; }
+   
+   int get level => _level;
+
+   void set level(int level) {
+    _level = level;
+   }
+   
+   bool get gewonnen => _gewonnen;
    
    
    WumpusWelt(this._size, this._level) {
@@ -100,11 +108,11 @@ class WumpusWelt {
     }
     
     
-    
-    /**
-     * Returns the level of the game. The game is played on a nxn-field.
-     */
-    int get level => _level;
+    void pruefeSchatz()  {
+      if(td = "#spieler#level#schatz"){
+        _gewonnen = true;
+      }
+    }
 }
 
 class Field {

@@ -7,6 +7,7 @@ class WumpusView {
     
   var startbutton = querySelector('#start');
   var gewonnen = querySelector('#gewonnen');
+  var einstellungen = querySelector('#einstellungen');
   var level = querySelector('#level');
   var game = querySelector('.spielfeld');
   var endebutton = querySelector('#ende');
@@ -50,8 +51,9 @@ class WumpusView {
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    startbutton.innerHtml = "Nächstes Level";
     
+    
+    startbutton.innerHtml = "Nächstes Level";
     
     // Aktualisiert das Feld
     final field = model.field;
