@@ -35,6 +35,12 @@ class WumpusController {
       view.generateField(game);
       view.update(game);
     });
+    
+    view.endebutton.onClick.listen((_){
+      game.stop();
+      print("Das Spiel wurde beendet!");
+      view.update(game);
+    });
 
 
     // Steuerung des Spielers
