@@ -51,10 +51,8 @@ class WumpusView {
    */
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Nächstes Level";
-    endebutton.innerHtml = model.stopped ? "Beendet" : "";
-    if (model.stopped) {
-      final beendet = model.stopped ? "Das Spiel wurde beendet!<br>" : "";
-    }
+    
+    
     // Aktualisiert das Feld
     final field = model.field;
     for (int row = 0; row < field.length; row++) {
