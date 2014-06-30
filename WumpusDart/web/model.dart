@@ -86,11 +86,20 @@ class WumpusWelt {
      */
     bool get onField {
       return _spieler.getrow >= 0 &&
-          _spieler.getrow < this._size &&
-          _spieler.getcol >= 0 &&
-              _spieler.getcol < this._size;
+             _spieler.getrow < this._size &&
+             _spieler.getcol >= 0 &&
+             _spieler.getcol < this._size;
     
      }
+    
+    bool get pruefeEingabe {
+      if (_spieler.getrow > 3 || _spieler.getrow < 0 ||
+          _spieler.getcol > 3 || _spieler.getcol < 0){
+        return false;
+      }else return true;
+    }
+    
+    
     
     /**
      * Returns the level of the game. The game is played on a nxn-field.
@@ -244,18 +253,30 @@ class Spieler{
 
     void hoch() {
       _row--;
+      if (_game.pruefeEingabe == false){
+        _row++;
+      }
     }
 
     void runter() {
       _row++;
+      if (_game.pruefeEingabe == false){
+        _row--;
+      }
     }
 
     void links() {
       _col--;
+      if (_game.pruefeEingabe == false){
+        _col++;
+      }
     }
 
     void rechts() {
       _col++;
+      if (_game.pruefeEingabe == false){
+        _col--;
+      }
     }
     
     int get getcol {
@@ -265,7 +286,7 @@ class Spieler{
     int get getrow {
       return this._row;
     }
-  
+    
     void set col(int col) { _col = col; }
     void set row(int row) { _row = row; }
 }
