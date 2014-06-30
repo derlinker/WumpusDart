@@ -80,17 +80,25 @@ class WumpusView {
               td.classes.clear();
               for(var s in field[row][col].split(' ')){
                 td.classes.add('level');
+                
                 if (s == "spieler"){ 
                   td.classes.add('spieler'); 
                   td.innerHtml = "Spieler";
                   }
+                
                 if (s == "wumpus"){ 
-                  td.classes.add('wumpus'); 
                   if( s == "spieler"){
                     td.classes.add('spieler');
+                    td.classes.add('wumpus');
+                    td.innerHtml = "Spieler ist TOT";
+                    }
                   }
-                  td.innerHtml = "Spieler ist TOT";}
-                if (s == "grube"){ td.classes.add('grube'); td.innerHtml = "";}
+                
+                if (s == "grube"){ 
+                  td.classes.add('grube');
+                  td.innerHtml = "";
+                  }
+                
                 if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "";}
                 if (s == "schatz"){ td.classes.add('schatz'); td.innerHtml = "";}
                 if (s == "gestank"){ td.classes.add('gestank'); td.innerHtml = "";}
