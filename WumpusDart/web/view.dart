@@ -50,7 +50,7 @@ class WumpusView {
    */
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Nächstes Level";
-    gameover.innerHtml = model.gameOver ? "Game Over" : "";
+   // gameover.innerHtml = model.gameOver ? "Game Over" : "";
     
     // Aktualisiert das Feld
     final field = model.field;

@@ -81,10 +81,9 @@ class WumpusWelt {
       * Returns whether the game is over.
       * Game is over, when snake has left the field or is tangled.
       */
-
-     //bool get gameOver => false; //TODO: Überprüfen!
-
-    /**
+   //bool get gameOver => spieler.OnFieldGrube;
+     
+     /**
      * Indicates whether the player is not on the field.
      */
     bool get notOnField => !onField;
@@ -107,12 +106,13 @@ class WumpusWelt {
       }else return true;
     }
     
-    
+ /**   
     void pruefeSchatz()  {
       if(td = "#spieler#level#schatz"){
         _gewonnen = true;
       }
     }
+    * */
 }
 
 class Field {
