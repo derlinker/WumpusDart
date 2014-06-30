@@ -4,7 +4,7 @@ import 'dart:html';
 import 'model.dart';
 
 
-class WumpusView {    
+class WumpusView {
   var startbutton = querySelector('#start');
   var gameover = querySelector('#gameover');
   var gewonnen = querySelector('#gewonnen');
@@ -13,13 +13,13 @@ class WumpusView {
   var game = querySelector('.spielfeld');
   var endebutton = querySelector('#ende');
   var ausgabe = querySelector('#ausgabe');
- 
+
   /**
    * Präsentiert das Model
    */
   final model = new WumpusWelt(0, 0);
-  
- /** 
+
+  /** 
   /**
    * Level geschafft
    */
@@ -44,14 +44,14 @@ class WumpusView {
    */
   HtmlElement get startButton => querySelector('#start');
   */
-  
+
   /**
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Nächstes Level";
-   // gameover.innerHtml = model.gameOver ? "Game Over" : "";
-    
+    // gameover.innerHtml = model.gameOver ? "Game Over" : "";
+
     // Aktualisiert das Feld
     final field = model.field;
     /**for (int row = 0; row < field.length; row++) {
@@ -72,71 +72,83 @@ class WumpusView {
         }
       }
     }*/
-    
+
     for (int row = 0; row < field.length; row++) {
-          for (int col = 0; col < field[row].length; col++) {
-            final td = game.querySelector("#field_${row}_${col}");
-            if (td != null) {
-              td.classes.clear();
-              for(var s in field[row][col].split(' ')){
-                td.classes.add('level');
-                
-                if (s == "spieler"){ 
-                  td.classes.add('spieler'); 
-                  td.innerHtml = "Spieler";
-                  }
-                
-                if (s == "wumpus"){ 
-                  if( s == "spieler"){
-                    td.classes.add('spieler');
-                    td.classes.add('wumpus');
-                    td.innerHtml = "Spieler ist TOT";
-                    }
-                  }
-                
-                if (s == "grube"){ 
-                  td.classes.add('grube');
-                  td.innerHtml = "";
-                  }
-                
-                if (s == "luftzug"){ td.classes.add('luftzug'); td.innerHtml = "";}
-                if (s == "schatz"){ td.classes.add('schatz'); td.innerHtml = "";}
-                if (s == "gestank"){ td.classes.add('gestank'); td.innerHtml = "";}
+      for (int col = 0; col < field[row].length; col++) {
+        final td = game.querySelector("#field_${row}_${col}");
+        if (td != null) {
+          td.classes.clear();
+          for (var s in field[row][col].split(' ')) {
+            td.classes.add('level');
+            if (s == "spieler") {
+              td.classes.add('spieler');
+              td.innerHtml += "Spieler";
+              td.style.color = "blue";
+            }
+            if (s == "wumpus") {
+              td.classes.add('wumpus');
+              if (s == "spieler") {
+                td.classes.add('spieler');
               }
-              if (field[row][col] == "level"){ td.innerHtml = "";}
+              td.innerHtml = "Spieler ist TOT";
+            }
+            if (s == "grube") {
+              td.classes.add('grube');
+              td.innerHtml = "grube ";
+              td.style.color = "white";
+            }
+            if (s == "luftzug") {
+              td.classes.add('luftzug');
+              td.innerHtml = "luftzug ";
+              td.style.color = "white";
+            }
+            if (s == "schatz") {
+              td.classes.add('schatz');
+              td.innerHtml = "schatz ";
+              td.style.color = "white";
+            }
+            if (s == "gestank") {
+              td.classes.add('gestank');
+              td.innerHtml = "gestank ";
+              td.style.color = "white";
             }
           }
+          if (field[row][col] == "level") {
+            td.innerHtml = "";
+          }
         }
-    
-    //gameover.innerHtml = model.gameOver ? "Game Over" : "";
-    
+      }
+    }
 
-  
-  /**
+    //gameover.innerHtml = model.gameOver ? "Game Over" : "";
+
+
+
+    /**
     if (model.gameOver) {
           final onfield = model.wumpus.notOnField ? "Der Spieler ist nicht mehr auf dem Spielfeld.<br>" : "";
           reasons.innerHtml = "";
           reasons.innerHtml = "$onfield";
         }
         */
-  
+
   }
-  
+
 
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
     */
-  void generateField(WumpusWelt model){
+  void generateField(WumpusWelt model) {
     final field = model.field;
     String table = "";
-    for(int row = 0; row < field.length; row++) {
+    for (int row = 0; row < field.length; row++) {
       table += "<tr>";
-      for(int col = 0; col < field[row].length; col++) {
+      for (int col = 0; col < field[row].length; col++) {
         final assignment = field[row][col];
         final position = "field_${row}_${col}";
         table += "<td id = $position class = '$assignment'></td>";
       }
-      table+= "</tr>";
+      table += "</tr>";
     }
     game.innerHtml = table;
   }

@@ -71,6 +71,7 @@ td {
   border-color: black;
   border-spacing: 5px;
   border-collapse: separate;
+  border-radius: 20px;
   padding: 5px;
   text-align: center;
   width: 80px;
@@ -93,9 +94,15 @@ td {
 .level.luftzug  {
   /**background-color: #17D5C2;*/
 }
-.level.gestank  {
+.level.gestank :focus {
   background-color: #17D52D;
 }
 .level.schatz {
   background-color: #C59E02;
+}
+
+.verbergen {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
