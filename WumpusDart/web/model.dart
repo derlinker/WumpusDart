@@ -252,7 +252,9 @@ class Field {
 class Spieler{
   int _col;
   int _row;
+  bool _schatz = false;
   WumpusWelt _game;
+  
   
   Spieler(WumpusWelt game){
     this._game = game;
