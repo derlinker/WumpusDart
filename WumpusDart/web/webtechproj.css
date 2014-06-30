@@ -78,6 +78,11 @@ td {
   height: 80px;
 }
 
+#gameover {
+  color: #333;
+  margin: auto;
+}
+
 .spielfeld {
    margin: auto;
 }
@@ -89,20 +94,13 @@ td {
 }
 .level.wumpus {
   /**background-color: #FF6B00;*/
-  visability: hidden;
 }
 .level.luftzug  {
   /**background-color: #17D5C2;*/
 }
-.level.gestank :focus {
-  background-color: #17D52D;
+.level.gestank {
+ /** background-color: #17D52D; */
 }
 .level.schatz {
-  background-color: #C59E02;
-}
-
-.verbergen {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+ /** background-color: #C59E02; */
 }

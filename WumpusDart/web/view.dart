@@ -50,8 +50,12 @@ class WumpusView {
    */
   void update(WumpusWelt model) {
     startbutton.innerHtml = "Nächstes Level";
-    // gameover.innerHtml = model.gameOver ? "Game Over" : "";
-
+    if(model.spielstatus == 1){
+      gameover.innerHtml = "Gewonnen ";
+    }else if(model.spielstatus == 2){
+      gameover.innerHtml = "Verloren ";
+    }else gameover.innerHtml = "";
+    
     // Aktualisiert das Feld
     final field = model.field;
     /**for (int row = 0; row < field.length; row++) {
@@ -82,15 +86,15 @@ class WumpusView {
             td.classes.add('level');
             if (s == "spieler") {
               td.classes.add('spieler');
+              if(td.innerHtml !=  "Spieler"){
               td.innerHtml += "Spieler";
+              }
               td.style.color = "blue";
             }
             if (s == "wumpus") {
               td.classes.add('wumpus');
-              if (s == "spieler") {
-                td.classes.add('spieler');
-              }
-              td.innerHtml = "Spieler ist TOT";
+              td.innerHtml = "Wumpus tötet den ";
+              td.style.color = "white";
             }
             if (s == "grube") {
               td.classes.add('grube');

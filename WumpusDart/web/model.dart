@@ -3,7 +3,9 @@ library model;
 class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
-  var _spieler, _gewonnen;
+  var _spieler;
+  bool _status = false;
+  int _spielstatus = 0;
   int _size;
   int _level;
   Field _wumpus;
@@ -11,7 +13,10 @@ class WumpusWelt {
   List _gruben = new List<Field>();
   List _gestank = new List<Field>();
   List _luftzug = new List<Field>();
+  
+  int get spielstatus => _spielstatus;
 
+   bool get status => _status;
   /**
     * Wenn das Spiel gestopt wird, aufrufen
     */
@@ -43,7 +48,7 @@ class WumpusWelt {
     _level = level;
    }
    
-   bool get gewonnen => _gewonnen;
+   bool get gewonnen => _status;
    
    
    WumpusWelt(this._size, this._level) {
@@ -55,6 +60,8 @@ class WumpusWelt {
        _gruben = new Field(this._level).erstelleGruben;
        _gestank = new Field(this._level).erstelleGestank;
        _luftzug = new Field(this._level).erstelleLuftzug;
+       _status = true;
+       _spielstatus = 0;
      }
    
    List<List<String>> get _field {
@@ -100,19 +107,36 @@ class WumpusWelt {
      }
     
     bool get pruefeEingabe {
+      pruefeVerloren();
+      pruefeGewonnen();
       if (_spieler.getrow > 3 || _spieler.getrow < 0 ||
           _spieler.getcol > 3 || _spieler.getcol < 0){
         return false;
       }else return true;
     }
     
- /**   
-    void pruefeSchatz()  {
-      if(td = "#spieler#level#schatz"){
-        _gewonnen = true;
+    void pruefeGewonnen()  {
+      if(_spieler.getrow == _schatz._row && _spieler.getcol == _schatz._col){
+        _status = false;
+        _spielstatus = 1;
+        print("gewonennenenenenenenen");
       }
     }
-    * */
+    
+    void pruefeVerloren()  {
+          if(_spieler.getrow == _wumpus._row && _spieler.getcol == _wumpus._col){
+            _status = false;
+            _spielstatus = 2;
+            print("verlorenennenenenenenenen");
+          }
+          _gruben.forEach((g){
+            if(g._row == _spieler.getrow && g._col == _spieler.getcol){
+              _status = false;
+              _spielstatus = 2;
+              print("verlorennnnnnn");
+            }
+          });
+        }
 }
 
 class Field {

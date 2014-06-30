@@ -49,6 +49,8 @@ class WumpusController {
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
+      
+        if (game.status){
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
@@ -64,6 +66,7 @@ class WumpusController {
             break;
         }
         view.update(game);
+        }
     });
-  }
+    }
 }
