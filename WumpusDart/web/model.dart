@@ -13,7 +13,7 @@ class WumpusWelt {
   List _luftzug = new List<Field>();
 
   /**
-    * Wenn das Spile gestopt wird, aufrufen
+    * Wenn das Spiel gestopt wird, aufrufen
     */
    bool get stopped => _gamestatus == #stopped;
 

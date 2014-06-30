@@ -1,5 +1,7 @@
 
 body {
+  background: url('img/wumpus_small.png') no-repeat right top;
+  background-position: center center;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -57,9 +59,9 @@ ul li {
   text-align: center;
 }
 
-h1, p {
+h1, small {
   color: #333;
-  margin: 15px;
+  margin: auto;
 }
 
 
