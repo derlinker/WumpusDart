@@ -155,20 +155,24 @@ td {
   margin: auto;
 }*/
 .level { 
- background-color: white; 
+ background-color: black; 
 }
 .level.grube {
-  /**background-color: #401E05 ;*/
+  background-color: black;
 }
 .level.wumpus {
-  /**background-color: #FF6B00;*/
+  background-color: black;
 }
 .level.luftzug  {
-  /**background-color: #17D5C2;*/
+  background-color: black;
 }
 .level.gestank {
- /** background-color: #17D52D; */
+  background-color: black;
 }
 .level.schatz {
- /** background-color: #C59E02; */
+  background-color: black; 
+}
+.level.spieler {
+  background-color: black;
+  color: orange;
 }
