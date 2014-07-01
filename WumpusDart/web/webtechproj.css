@@ -35,6 +35,7 @@ small {
 
 .menu .name {
   list-style-position: inside;
+  color: white;
 	font-weight: bold;
 }
 
@@ -75,17 +76,18 @@ small {
 #message #gameover:empty { visibilty: hidden; }
 
 #message #gameover {
-  font-size: 2em;
+  /*font-size: 2em;
   font-family: Tahoma, sans-serif;
   font-position : center;
   line-height: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFF33), to(#FF0000));
+  color: white;*/
+  /*background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF)); 
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /*font-size: 3rem;
+  -webkit-text-fill-color: transparent;*/
+  font-size: 3rem;
   color: #9a001a;
   background: rgba(255, 255, 255, 0.5);
-  text-align: center*/
+  text-align: center;
 }
 
 /*.ausgabe {
