@@ -109,8 +109,8 @@ class WumpusWelt {
     bool get pruefeEingabe {
       pruefeVerloren();
       pruefeGewonnen();
-      if (_spieler.getrow > 3 || _spieler.getrow < 0 ||
-          _spieler.getcol > 3 || _spieler.getcol < 0){
+      if (_spieler.getrow > _size-1 || _spieler.getrow < 0 ||
+          _spieler.getcol > _size-1 || _spieler.getcol < 0){
         return false;
       }else return true;
     }

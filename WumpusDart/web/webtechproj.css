@@ -1,5 +1,5 @@
 body {
-  background: url('img/hintergrund.jpg') no-repeat right top;
+  background: url('img/dorcia_262f.jpg') no-repeat right top;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: normal;
@@ -22,6 +22,10 @@ h1 {
 
 li {
     list-style-type: none;
+}
+
+small {
+    color: white;
 }
 
 .menu{
@@ -109,7 +113,7 @@ li {
   background: rgba(255, 255, 255, 0.3);*/
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: white;
   border-spacing: 5px;
   border-collapse: separate;
   border-radius: 20px;
@@ -117,6 +121,7 @@ li {
   text-align: center;
   width: 90px;
   height: 90px;
+  background: black;
 }
 
 /*

@@ -44,32 +44,32 @@ class WumpusView {
               if(td.innerHtml !=  "Spieler"){
               td.innerHtml += "Spieler";
               }
-              td.style.color = "blue";
+              td.style.color = "orange";
             }
             if (s == "wumpus") {
               td.classes.add('wumpus');
               td.innerHtml = "Wumpus tötet den ";
-              td.style.color = "white";
+              td.style.color = "black";
             }
             if (s == "grube") {
               td.classes.add('grube');
               td.innerHtml = "Eine Tiefe Grube für den ";
-              td.style.color = "white";
+              td.style.color = "black";
             }
             if (s == "luftzug") {
               td.classes.add('luftzug');
               td.innerHtml = "Ein Luftzug spürt der ";
-              td.style.color = "white";
+              td.style.color = "black";
             }
             if (s == "schatz") {
               td.classes.add('schatz');
               td.innerHtml = "Goldtruhe findet der ";
-              td.style.color = "white";
+              td.style.color = "black";
             }
             if (s == "gestank") {
               td.classes.add('gestank');
               td.innerHtml = "Ein Geruch für den  ";
-              td.style.color = "white";
+              td.style.color = "black";
             }
           }
           if (field[row][col] == "level") {
