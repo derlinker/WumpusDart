@@ -5,18 +5,18 @@ import 'model.dart';
 
 
 class WumpusView {
+  /**
+   * querySelectoren für die einzelnen Feler im HTML
+   */
   var startbutton = querySelector('#start');
   var gameover = querySelector('#gameover');
   var gewonnen = querySelector('#gewonnen');
   var anleitung = querySelector('#anleitung');
-  var einstellungen = querySelector('#einstellungen');
   var levelnr = querySelector('#levelnr');
   var game = querySelector('.spielfeld');
-  var endebutton = querySelector('#ende');
-  var ausgabe = querySelector('#ausgabe');
 
   /**
-   * Präsentiert das Model
+   * Repräsentiert das Model
    */
   var model;
 
@@ -30,17 +30,24 @@ class WumpusView {
       levelnr.style.display = "inline";
       levelnr.innerHtml = model.level.toString();
     }
+    //Wenn gewonnen
       if(model.gewonnen == true)  {
         startbutton.style.display = "inline";
         startbutton.innerHtml = "Nächstes Level";
         gameover.innerHtml = "Sie haben Gewonnen!";
+    //Wenn verloren
       }else if(model.verloren == true)  {
         startbutton.style.display = "inline";
         startbutton.innerHtml = "Neustart";
         gameover.innerHtml = "Game Over";
       }else gameover.innerHtml = "";
     
-    // Aktualisiert das Feld
+    /**
+     *  Aktualisiert das Feld
+     *  Fügt den Tabellen die CSS Classen hinzu und auf dieser Basis
+     *  wird der Inhalt der Zelle genieriert. 
+     */
+      
     final field = model.field;
     for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
@@ -96,7 +103,7 @@ class WumpusView {
   }
   
   /**
-    *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
+    *  Erzeugt das Spielfeld als HTML Tabelle und fügt die Spielelemente ein.
     */
   void generateField(WumpusWelt model) {
     final field = model.field;
