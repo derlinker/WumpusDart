@@ -74,7 +74,14 @@ class WumpusWelt {
     _spielstatus = true;
   }
 
-
+ /**
+  * Getter Methode für das Spielfeld
+  * @return Eine Liste mit Listen von Felder
+  * 
+  * Diese Listen behinhalten jewails die Feldbeledung mit der _col und der _row pro Feld
+  * und einen Textschlüssel pro Feld.
+  * 
+  */
   List<List<String>> get _field {
     var _field = new Iterable.generate(_size, (row) {
       return new Iterable.generate(_size, (col) => "level").toList();
