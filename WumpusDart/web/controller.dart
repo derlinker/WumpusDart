@@ -38,20 +38,7 @@ class WumpusController {
       view.update(game);
     }
     });
-    // EinstellungsButton wird gedrückt
- /*   view.einstellungen.onClick.listen((_){
-      //TODO!
-      print("Einstellungen wurden gedrückt!");
-    });
-    // EndeButton wird gedrückt
-    view.endebutton.onClick.listen((_){
-      //TODO!
-      game.stop();
-      print("Das Spiel wurde beendet!");
-      view.update(game);
-    });
-    */
-
+    
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
         if (game.spielstatus){

@@ -26,18 +26,15 @@ class WumpusView {
   void update(WumpusWelt model) {
     if(model.spielstatus == true)  {
       startbutton.style.display = "None";
-      endebutton.innerHtml = "Spiel Beenden";
       anleitung.style.display = "None";
     }
       if(model.gewonnen == true)  {
         startbutton.style.display = "inline";
         startbutton.innerHtml = "Nächstes Level";
-        endebutton.innerHtml = "Spiel Beenden";
         gameover.innerHtml = "Sie haben Gewonnen!";
       }else if(model.verloren == true)  {
         startbutton.style.display = "inline";
         startbutton.innerHtml = "Neustart";
-        endebutton.innerHtml = "Spiel Beenden";
         gameover.innerHtml = "Game Over";
       }else gameover.innerHtml = "";
     
