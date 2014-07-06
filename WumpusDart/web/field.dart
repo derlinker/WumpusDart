@@ -180,10 +180,10 @@ class Field {
       _gestank.add(new Field.point(2, 1));
     }
   void level4Gestank(){
-      _gestank.add(new Field.point(3, 1));
-      _gestank.add(new Field.point(4, 0));
-      _gestank.add(new Field.point(4, 2));
-      _gestank.add(new Field.point(5, 1));
+      _gestank.add(new Field.point(2, 1));
+      _gestank.add(new Field.point(3, 0));
+      _gestank.add(new Field.point(3, 2));
+      _gestank.add(new Field.point(4, 1));
     }
   void level5Gestank(){
       _gestank.add(new Field.point(4, 4));
