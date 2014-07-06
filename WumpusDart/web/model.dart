@@ -4,8 +4,12 @@ class WumpusWelt {
   //Status des Spiels
   String _gamestatus;
   var _spieler;
-  bool _status = false;
-  int _spielstatus = 0;
+  // Variable für Gewonnen
+  bool _gewonnenstatus = false;
+  // Variable für Verlieren
+  bool _verlierstatus = false;
+  // Variable ob das Spiel läuft
+  bool _spielstatus = false;
   int _size;
   int _level;
   Field _wumpus;
@@ -13,10 +17,8 @@ class WumpusWelt {
   List _gruben = new List<Field>();
   List _gestank = new List<Field>();
   List _luftzug = new List<Field>();
-  
-  int get spielstatus => _spielstatus;
 
-   bool get status => _status;
+   bool get status => _gewonnenstatus;
   /**
     * Wenn das Spiel gestopt wird, aufrufen
     */
@@ -48,7 +50,11 @@ class WumpusWelt {
     _level = level;
    }
    
-   bool get gewonnen => _status;
+   bool get gewonnen => _gewonnenstatus;
+   
+   bool get verloren => _verlierstatus;
+   
+   bool get spielstatus => _spielstatus;
    
    
    WumpusWelt(this._size, this._level) {
@@ -60,8 +66,9 @@ class WumpusWelt {
        _gruben = new Field(this._level).erstelleGruben;
        _gestank = new Field(this._level).erstelleGestank;
        _luftzug = new Field(this._level).erstelleLuftzug;
-       _status = true;
-       _spielstatus = 0;
+       _gewonnenstatus = false;
+       _verlierstatus = false;
+       _spielstatus = true;
      }
    
    List<List<String>> get _field {
@@ -117,23 +124,26 @@ class WumpusWelt {
     
     void pruefeGewonnen()  {
       if(_spieler.getrow == _schatz._row && _spieler.getcol == _schatz._col){
-        _status = false;
-        _spielstatus = 1;
-        print("gewonennenenenenenenen");
+        _gewonnenstatus = true;
+        _verlierstatus = false;
+        _spielstatus = false;
+        print("Sie haben Gewonnen");
       }
     }
     
     void pruefeVerloren()  {
           if(_spieler.getrow == _wumpus._row && _spieler.getcol == _wumpus._col){
-            _status = false;
-            _spielstatus = 2;
-            print("verlorenennenenenenenenen");
+            _gewonnenstatus = false;
+            _verlierstatus = true;
+            _spielstatus = false;
+            print("Sie haben Verloren");
           }
           _gruben.forEach((g){
             if(g._row == _spieler.getrow && g._col == _spieler.getcol){
-              _status = false;
-              _spielstatus = 2;
-              print("verlorennnnnnn");
+              _gewonnenstatus = false;
+              _verlierstatus = true;
+              _spielstatus = false;
+              print("Sie haben Verloren");
             }
           });
         }

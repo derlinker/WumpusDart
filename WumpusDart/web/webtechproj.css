@@ -29,8 +29,9 @@ small {
 }
 
 .menu{
-	float: top;
+	float: left;
 	list-style-position: outside;
+	width: 15%
 }
 
 .menu .name {
@@ -69,91 +70,34 @@ small {
 	border-style: inset
 }
 
-#message  {
-  margin: 50px 0px 50px 0px; 
-}
 
 #message #gameover:empty { visibilty: hidden; }
 
 #message #gameover {
-  /*font-size: 2em;
-  font-family: Tahoma, sans-serif;
   font-position : center;
   line-height: 1em;
-  color: white;*/
-  /*background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF)); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;*/
-  font-size: 3rem;
-  color: #9a001a;
-  background: rgba(255, 255, 255, 0.5);
-  text-align: center;
+  /* Font Style-Quelle: Html-seminar.de */
+    font-size: 50pt;
+    font-weight: bold;
+    text-shadow:   0px   0px 10px white,
+                   5px  -5px 10px #F8FF9D,
+                 -10px -10px 20px #F5FE5C,
+                  10px -15px 20px #FDDB33,
+                 -10px -20px 20px #FFC126,
+                  10px -25px 20px #FF7808,
+                 -10px -30px 20px #F95801,
+                  15px -35px 20px #FE7606,
+                 -15px -40px 20px #FD5C01,
+                  15px -45px 15px #E54600,
+                 -20px -50px 15px #D23700,
+                  20px -55px 15px #B82B00,
+                 -20px -60px 15px #A11301,
+                  20px -65px 15px #981D01,
+                 -25px -70px 10px #851200,
+                  25px -75px 10px #690D00,
+                 -25px -80px 10px #3E0600;
 }
 
-/*.ausgabe {
-	text-align: center;
-}*/
-
-#titel {
- /* background-color: rgba(123, 123, 123, 0.5);
-  text-align: center;*/
-}
-
-.spielfeld  {
-  margin: 30px auto 30px auto;
-  
-  /*position: relative;
-  top: 50px;
-  left: -250px;
-  margin: auto;
-  margin: 50px auto 50px auto;*/
-}
-
-.spielfeld td {
-  /*width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.3);*/
-  border-width: 1px;
-  border-style: solid;
-  border-color: white;
-  border-spacing: 5px;
-  border-collapse: separate;
-  border-radius: 20px;
-  padding: 5px;
-  text-align: center;
-  width: 90px;
-  height: 90px;
-  background: black;
-}
-
-/*
-p {
-  font-size: px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-td {
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  border-spacing: 5px;
-  border-collapse: separate;
-  border-radius: 20px;
-  padding: 5px;
-  text-align: center;
-  width: 80px;
-  height: 80px;
-}
-*/
-/*
-.spielfeld {
-  position: relative;
-  top: 50px;
-  left: -250px;
-  margin: auto;
-}*/
 .level { 
  background-color: black; 
 }
@@ -175,4 +119,28 @@ td {
 .level.spieler {
   background-color: black;
   color: orange;
+}
+
+#spiel  {
+  width: 85%;
+}
+#feld .spielfeld  {
+  
+  margin: 0 auto;
+}
+#feld .spielfeld td {
+  /*width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);*/
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-spacing: 5px;
+  border-collapse: separate;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  background: black;
 }

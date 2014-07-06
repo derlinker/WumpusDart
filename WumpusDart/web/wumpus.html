@@ -16,26 +16,32 @@
       <div class="menu">
           <li class="name">Menü</li>
           <li><button id="start">Neues Spiel</button></li>
-         <!-- <li><button id="einstellungen">Einstellungen</button></li>
-          <li><button id="ende">Ende</button></li> -->
+         <!-- <li><button id="einstellungen">Einstellungen</button></li> -->
+          <li><button id="ende">Ende</button></li>
       </div>
       
+      <div id='spiel'>
       <div id='message'>
         <div id='gameover'></div>
       </div>
+      <div id='feld'>
+        <table class='spielfeld'></table>
+        </div>
+      </div>
       
-      <table class='spielfeld'>
-      </table>
+   
      <!-- <div class="ausgabe">
         Ausgabe:
         <textarea name="user_eingabe" cols="25" rows="5"> Hier erscheint die Ausgabe...</textarea>
       </div>
       -->
+      <div id = 'inhaber'>
       <p>
         <small>
           &copy; André Biester,Daniel Hildenbeutel & Helge Hintze, 2014<br>
         </small>
       </p>
+      </div>
     </div>
 
     <script type="application/dart" src="wumpus.dart"></script>

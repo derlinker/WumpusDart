@@ -23,12 +23,21 @@ class WumpusView {
    * Aktualiseirt die View bzw. das SpielFeld
    */
   void update(WumpusWelt model) {
-    startbutton.innerHtml = "Neustart";
-    if(model.spielstatus == 1){
-      gameover.innerHtml = "Sie haben Gewonnen!";
-    }else if(model.spielstatus == 2){
-      gameover.innerHtml = "Game Over";
-    }else gameover.innerHtml = "";
+    if(model.spielstatus == true)  {
+      startbutton.style.display = "None";
+      endebutton.innerHtml = "Spiel Beenden";
+    }
+      if(model.gewonnen == true)  {
+        startbutton.style.display = "inline";
+        startbutton.innerHtml = "Nächstes Level";
+        endebutton.innerHtml = "Spiel Beenden";
+        gameover.innerHtml = "Sie haben Gewonnen!";
+      }else if(model.verloren == true)  {
+        startbutton.style.display = "inline";
+        startbutton.innerHtml = "Neustart";
+        endebutton.innerHtml = "Spiel Beenden";
+        gameover.innerHtml = "Game Over";
+      }else gameover.innerHtml = "";
     
     // Aktualisiert das Feld
     final field = model.field;

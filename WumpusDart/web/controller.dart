@@ -22,6 +22,7 @@ class WumpusController {
   WumpusController() {
     //StartButton wird gedrückt
     view.startbutton.onClick.listen((_) {
+    game.spielstatus == false;
     game.level = game.level + 1;
 
     switch (game.level) {
@@ -32,8 +33,10 @@ class WumpusController {
           game = new WumpusWelt(4, 1);
           break;
       }
+    if(game.spielstatus == true)  {
       view.generateField(game);
       view.update(game);
+    }
     });
     // EinstellungsButton wird gedrückt
  /*   view.einstellungen.onClick.listen((_){
@@ -51,19 +54,23 @@ class WumpusController {
 
     // Steuerung des Spielers
     window.onKeyDown.listen((KeyboardEvent ev) {
-        if (game.status){
+        if (game.spielstatus){
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
+            print("Der Spieler bewegt sich nach Links");
             break;
           case KeyCode.RIGHT:
             game.spieler.rechts();
+            print("Der Spieler bewegt sich nach Rechts");
             break;
           case KeyCode.UP:
             game.spieler.hoch();
+            print("Der Spieler bewegt sich nach Oben");
             break;
           case KeyCode.DOWN:
             game.spieler.runter();
+            print("Der Spieler bewegt sich nach Unten");
             break;
         }
         view.update(game);
