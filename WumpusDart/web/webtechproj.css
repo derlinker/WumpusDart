@@ -125,6 +125,11 @@ small {
   height: 90px;
   background: black;
 }
+#anleitung {
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 24px;
+  text-align: justify;
+}
 
 /*
 p {
