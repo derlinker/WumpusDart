@@ -60,7 +60,6 @@ class WumpusController {
       view.generateField(game);
       view.update(game);
     }
-    game.level = game.level + 1;
     });
     
     // Steuerung des Spielers

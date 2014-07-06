@@ -104,6 +104,7 @@ class WumpusWelt {
         _gewonnenstatus = true;
                 _verlierstatus = false;
                 _spielstatus = false;
+                _level = _level + 1;
                 print("Sie haben Gewonnen");
       }
     }
