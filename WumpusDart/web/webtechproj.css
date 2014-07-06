@@ -156,6 +156,11 @@ td {
 }*/
 .level { 
  background-color: black; 
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+
 }
 .level.grube {
   background-color: black;
