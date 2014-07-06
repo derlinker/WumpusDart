@@ -23,20 +23,44 @@ class WumpusController {
     //StartButton wird gedrückt
     view.startbutton.onClick.listen((_) {
     game.spielstatus == false;
-    game.level = game.level + 1;
 
     switch (game.level) {
         case 1:
           game = new WumpusWelt(4, 1);
           break;
         case 2:
-          game = new WumpusWelt(4, 1);
+          game = new WumpusWelt(4, 2);
+          break;
+        case 3:
+          game = new WumpusWelt(5, 3);
+          break;
+        case 4:
+          game = new WumpusWelt(5, 4);
+          break;
+        case 5:
+          game = new WumpusWelt(6, 5);
+          break;
+        case 6:
+          game = new WumpusWelt(6, 6);
+          break;
+        case 7:
+          game = new WumpusWelt(4, 7);
+          break;
+        case 8:
+          game = new WumpusWelt(6, 8);
+          break;
+        case 9:
+          game = new WumpusWelt(5, 9);
+          break;
+        case 10:
+          game = new WumpusWelt(4, 10);
           break;
       }
     if(game.spielstatus == true)  {
       view.generateField(game);
       view.update(game);
     }
+    game.level = game.level + 1;
     });
     
     // Steuerung des Spielers
