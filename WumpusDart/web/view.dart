@@ -8,6 +8,7 @@ class WumpusView {
   var startbutton = querySelector('#start');
   var gameover = querySelector('#gameover');
   var gewonnen = querySelector('#gewonnen');
+  var anleitung = querySelector('#anleitung');
   var einstellungen = querySelector('#einstellungen');
   var level = querySelector('#level');
   var game = querySelector('.spielfeld');
@@ -26,6 +27,7 @@ class WumpusView {
     if(model.spielstatus == true)  {
       startbutton.style.display = "None";
       endebutton.innerHtml = "Spiel Beenden";
+      anleitung.style.display = "None";
     }
       if(model.gewonnen == true)  {
         startbutton.style.display = "inline";
