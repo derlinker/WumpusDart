@@ -47,6 +47,36 @@ class Field {
       _gruben.add(new Field.point(3, 2));
       _gruben.add(new Field.point(3, 3));
     }
+    void level7Gruben(){
+      _gruben.add(new Field.point(1, 0));
+      _gruben.add(new Field.point(1, 1));
+      _gruben.add(new Field.point(3, 2));
+    }
+    void level8Gruben(){
+      _gruben.add(new Field.point(2, 1));
+      _gruben.add(new Field.point(3, 0));
+      _gruben.add(new Field.point(4, 3));
+    }
+    void level9Gruben(){
+      _gruben.add(new Field.point(0, 1));
+      _gruben.add(new Field.point(0, 4));
+      _gruben.add(new Field.point(1, 1));
+      _gruben.add(new Field.point(1, 3));
+      _gruben.add(new Field.point(1, 4));
+      _gruben.add(new Field.point(2, 4));
+      _gruben.add(new Field.point(3, 2));
+      _gruben.add(new Field.point(3, 4));
+      _gruben.add(new Field.point(4, 2));
+      _gruben.add(new Field.point(4, 4));
+    }
+    void level10Gruben(){
+      _gruben.add(new Field.point(0, 0));
+      _gruben.add(new Field.point(0, 1));
+      _gruben.add(new Field.point(0, 3));
+      _gruben.add(new Field.point(1, 3));
+      _gruben.add(new Field.point(2, 1));
+      _gruben.add(new Field.point(3, 2));
+    }
     
   List<Field> get erstelleGestank {
     switch(_level)  {
@@ -68,6 +98,24 @@ class Field {
     _gestank.add(new Field.point(1, 1));
     _gestank.add(new Field.point(0, 0));
     _gestank.add(new Field.point(2, 0));
+  }
+  void level7Gestank(){
+    _gestank.add(new Field.point(1, 3));
+    _gestank.add(new Field.point(2, 2));
+    _gestank.add(new Field.point(3, 3));
+  }
+  void level8Gestank(){
+    _gestank.add(new Field.point(4, 2));
+    _gestank.add(new Field.point(5, 1));
+    _gestank.add(new Field.point(5, 3));
+  }
+  void level9Gestank(){
+    _gestank.add(new Field.point(1, 0));
+    _gestank.add(new Field.point(2, 1));
+    _gestank.add(new Field.point(3, 0));
+  }
+  void level10Gestank(){
+    _gestank.add(new Field.point(1, 2));
   }
     
   
@@ -105,6 +153,50 @@ class Field {
       _luftzug.add(new Field.point(2,  0));
     }
   
+  void level7Luftzug(){
+    _luftzug.add(new Field.point(0, 0));
+    _luftzug.add(new Field.point(0, 1));
+    _luftzug.add(new Field.point(1, 2));
+    _luftzug.add(new Field.point(2, 0));
+    _luftzug.add(new Field.point(2, 1));
+    _luftzug.add(new Field.point(2, 2));
+    _luftzug.add(new Field.point(3, 1));
+    _luftzug.add(new Field.point(3, 3));
+  }
+  
+  void level8Luftzug(){
+    _luftzug.add(new Field.point(2,  0));
+    _luftzug.add(new Field.point(2,  2));
+    _luftzug.add(new Field.point(3,  1));
+    _luftzug.add(new Field.point(3,  3));
+    _luftzug.add(new Field.point(4,  0));
+    _luftzug.add(new Field.point(4,  2));
+    _luftzug.add(new Field.point(5,  3));
+  }
+  
+  void level9Luftzug() {
+    _luftzug.add(new Field.point(0, 0));
+    _luftzug.add(new Field.point(0, 2));
+    _luftzug.add(new Field.point(0, 3));
+    _luftzug.add(new Field.point(1, 0));
+    _luftzug.add(new Field.point(1, 2));
+    _luftzug.add(new Field.point(2, 1));
+    _luftzug.add(new Field.point(2, 2));
+    _luftzug.add(new Field.point(2, 3));
+    _luftzug.add(new Field.point(3, 1));
+    _luftzug.add(new Field.point(3, 3));
+    _luftzug.add(new Field.point(4, 1));
+  }
+  void level10Luftzug(){
+    _luftzug.add(new Field.point(1, 0));
+    _luftzug.add(new Field.point(1, 1));
+    _luftzug.add(new Field.point(1, 2));
+    _luftzug.add(new Field.point(2, 0));
+    _luftzug.add(new Field.point(2, 2));
+    _luftzug.add(new Field.point(2, 3));
+    _luftzug.add(new Field.point(3, 1));
+  }
+  
   Field get erstelleWumpus {
     switch(_level){
       case 1:
@@ -122,6 +214,22 @@ class Field {
   
   void level2Wumpus(){
     _wumpus = new Field.point(2,0);
+  }
+  
+  void level7Wumpus(){
+    _wumpus = new Field.point(2,3);
+  }
+  
+  void level8Wumpus(){
+    _wumpus = new Field.point(5, 2);
+  }
+
+  void level9Wumpus(){
+    _wumpus = new Field.point(2, 0);
+  }
+  
+  void level10Wumpus(){
+    _wumpus = new Field.point(0, 2);
   }
   
   Field get erstelleSchatz {
@@ -143,8 +251,22 @@ class Field {
     _schatz = new Field.point(1,1);
   }
   
+  void level7Schatz(){
+    _schatz = new Field.point(0,3);
+  }
+  
+  void level8Schatz(){
+    _schatz = new Field.point(3, 2);
+  }
+  
+  void level9Schatz(){
+    _schatz = new Field.point(4, 3);
+  }
+  void level10Schatz(){
+    _schatz = new Field.point(3, 3);
+  }
+  
   get getRow => _row;
   get getCol => _col;
-  
   
 }
