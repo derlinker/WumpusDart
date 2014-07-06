@@ -7,9 +7,11 @@ body {
 
 h1 {
   font-size: 65px;
+  color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFF33), to(#FF0000));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
 }
 
 .fenster {
