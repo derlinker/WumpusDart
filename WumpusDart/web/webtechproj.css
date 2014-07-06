@@ -97,11 +97,6 @@ small {
                   25px -75px 10px #690D00,
                  -25px -80px 10px #3E0600;
 }
-#anleitung {
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 24px;
-  text-align: justify;
-}
 
 .level { 
  background-color: black; 
@@ -153,4 +148,12 @@ small {
   width: 90px;
   height: 90px;
   background: black;
+}
+#anleitung {
+  float: right;
+  width: 85%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 24px;
+  text-align: justify;
 }
