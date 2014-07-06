@@ -1,8 +1,9 @@
 library model;
 
+import 'field.dart';
+
 class WumpusWelt {
   //Status des Spiels
-  String _gamestatus;
   var _spieler;
   // Variable für Gewonnen
   bool _gewonnenstatus = false;
@@ -18,33 +19,8 @@ class WumpusWelt {
   List _gestank = new List<Field>();
   List _luftzug = new List<Field>();
 
-   bool get status => _gewonnenstatus;
-  /**
-    * Wenn das Spiel gestopt wird, aufrufen
-    */
-   bool get stopped => _gamestatus == #stopped;
 
-   /**
-    * Wenn das Spiel gestartet wird, aufrufen
-    */
-   bool get running => _gamestatus == #running;
-
-   /**
-    * Wenn ein Level beendet wurde
-    */
-   bool get finished => _gamestatus == #finished;
-
-   /**
-    * Startet 
-    */
-   void start() { _gamestatus == #running; }
-
-   /**
-    * Stops the game.
-    */
-   void stop() { _gamestatus == #stopped; }
-   
-   int get level => _level;
+  int get level => _level;
 
    void set level(int level) {
     _level = level;
@@ -75,12 +51,13 @@ class WumpusWelt {
      var _field = new Iterable.generate(_size, (row) {
        return new Iterable.generate(_size, (col) => "level").toList();
      }).toList();
-      _gestank.forEach((ge) => _field[ge._row][ge._col] += " gestank");
-      _gruben.forEach((g) => _field[g._row][g._col] += " grube");
-      _luftzug.forEach((l) => _field[l._row][l._col] += " luftzug");
-      _field[_wumpus._row][_wumpus._col] += " wumpus";
-      _field[_schatz._row][_schatz._col] += " schatz";
-      _field[_spieler.getrow][_spieler.getcol] += " spieler";
+     
+      _gestank.forEach((ge) => _field[ge.getRow][ge.getCol] += " gestank");
+      _gruben.forEach((g) => _field[g.getRow][g.getCol] += " grube");
+      _luftzug.forEach((l) => _field[l.getRow][l.getCol] += " luftzug");
+      _field[_wumpus.getRow][_wumpus.getCol] += " wumpus";
+      _field[_schatz.getRow][_schatz.getCol] += " schatz";
+      _field[_spieler._row][_spieler._col] += " spieler";
      return _field;
    }
    
@@ -123,170 +100,36 @@ class WumpusWelt {
     }
     
     void pruefeGewonnen()  {
-      if(_spieler.getrow == _schatz._row && _spieler.getcol == _schatz._col){
+      if(_spieler.getrow == _schatz.getRow && _spieler.getcol == _schatz.getCol){
         _gewonnenstatus = true;
-        _verlierstatus = false;
-        _spielstatus = false;
-        print("Sie haben Gewonnen");
+                _verlierstatus = false;
+                _spielstatus = false;
+                print("Sie haben Gewonnen");
       }
     }
     
     void pruefeVerloren()  {
-          if(_spieler.getrow == _wumpus._row && _spieler.getcol == _wumpus._col){
+          if(_spieler.getrow == _wumpus.getRow && _spieler.getcol == _wumpus.getCol){
             _gewonnenstatus = false;
-            _verlierstatus = true;
-            _spielstatus = false;
-            print("Sie haben Verloren");
+                        _verlierstatus = true;
+                        _spielstatus = false;
+                        print("Sie haben Verloren");
           }
           _gruben.forEach((g){
-            if(g._row == _spieler.getrow && g._col == _spieler.getcol){
+            if(g.getRow == _spieler.getrow && g.getCol == _spieler.getcol){
               _gewonnenstatus = false;
-              _verlierstatus = true;
-              _spielstatus = false;
-              print("Sie haben Verloren");
+                            _verlierstatus = true;
+                            _spielstatus = false;
+                            print("Sie haben Verloren");
             }
           });
         }
 }
 
-class Field {
-  //Position des Feldes
-  int _col, _size;
-  int _row, _level;
-  var _wumpus, _schatz;
-  
-  List _gruben = new List<Field>();
-  List _gestank = new List<Field>();
-  List _luftzug = new List<Field>();
-  
-  Field(this._level){
-    
-  }
-  
-  Field.point(this._row, this._col) { 
-  }
-  
-  
-  List<Field> get erstelleGruben {
-    switch(_level) {
-      case 1:
-        level1Gruben();
-        break;
-      case 2:
-        level2Gruben();
-        break;
-    }
-    return _gruben;
-  }
-    
-    void level1Gruben() {
-      _gruben.add(new Field.point(1, 2));
-      _gruben.add(new Field.point(0, 3));
-      _gruben.add(new Field.point(3, 2));
-    }
-    void level2Gruben() {
-      _gruben.add(new Field.point(3, 1));
-      _gruben.add(new Field.point(3, 2));
-      _gruben.add(new Field.point(3, 3));
-    }
-    
-  List<Field> get erstelleGestank {
-    switch(_level)  {
-      case 1:
-        level1Gestank();
-        break;
-      case 2:
-        level2Gestank();
-        break;
-    }
-    return _gestank;
-  }
-  void level1Gestank(){
-    _gestank.add(new Field.point(1, 1));
-    _gestank.add(new Field.point(0, 0));
-    _gestank.add(new Field.point(2, 0));
-  }
-  void level2Gestank(){
-    _gestank.add(new Field.point(1, 1));
-    _gestank.add(new Field.point(0, 0));
-    _gestank.add(new Field.point(2, 0));
-  }
-    
-  
-  List<Field> get erstelleLuftzug {
-    switch(_level)  {
-      case 1:
-        level1Luftzug();
-        break;
-      case 2:
-        level2Luftzug();
-        break;
-    }
-    return _luftzug;
-  }
-  
-  void level1Luftzug(){
-    _luftzug.add(new Field.point(1, 3));
-    _luftzug.add(new Field.point(0, 2));
-    _luftzug.add(new Field.point(1, 1));
-    _luftzug.add(new Field.point(3, 3));
-    _luftzug.add(new Field.point(2, 2));
-    _luftzug.add(new Field.point(3, 1));
-  }
-  
-  void level2Luftzug(){
-      _luftzug.add(new Field.point(1, 3));
-      _luftzug.add(new Field.point(0, 2));
-      _luftzug.add(new Field.point(1, 1));
-      _luftzug.add(new Field.point(3, 3));
-      _luftzug.add(new Field.point(2, 2));
-      _luftzug.add(new Field.point(3, 1));
-    }
-  
-  Field get erstelleWumpus {
-    switch(_level){
-      case 1:
-        level1Wumpus();
-        break;
-      case 2:
-        level2Wumpus();
-        break;
-      }
-    return _wumpus;
-   }
-  void level1Wumpus(){
-    _wumpus = new Field.point(1,0);
-  }
-  
-  void level2Wumpus(){
-    _wumpus = new Field.point(2,0);
-  }
-  
-  Field get erstelleSchatz {
-    switch(_level)  {
-      case 1:
-        level1Schatz();
-        break;
-      case 2:
-        level2Schatz();
-        break;
-    }
-    return _schatz;
-  }
-  void level1Schatz(){
-    _schatz = new Field.point(1,1);
-  }
-  
-  void level2Schatz(){
-    _schatz = new Field.point(1,1);
-  }
-  
-}
 //Der Spieler hat eine Position (x,y)
 class Spieler{
   int _col;
   int _row;
-  bool _schatz = false;
   WumpusWelt _game;
   
   
