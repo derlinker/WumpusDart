@@ -11,7 +11,6 @@ h1 {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFF33), to(#FF0000));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
 }
 
 .fenster {
@@ -39,15 +38,10 @@ small {
 
 .menu .name #level{
   list-style-position: inside;
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .menu button { 
-	/*font-family: Arial; 
-	color:#FFCC99; 
-	background-color: #000; 
-	border-color: #3f3f3f;
-	border-style: inset;*/
 	display: inline-block;
     white-space: nowrap;
     background-color: #ccc;
@@ -72,32 +66,31 @@ small {
 	border-style: inset
 }
 
-
 #message #gameover:empty { visibilty: hidden; }
 
 #message #gameover {
   font-position : center;
   line-height: 1em;
   /* Font Style-Quelle: Html-seminar.de */
-    font-size: 50pt;
-    font-weight: bold;
-    text-shadow:   0px   0px 10px white,
-                   5px  -5px 10px #F8FF9D,
-                 -10px -10px 20px #F5FE5C,
-                  10px -15px 20px #FDDB33,
-                 -10px -20px 20px #FFC126,
-                  10px -25px 20px #FF7808,
-                 -10px -30px 20px #F95801,
-                  15px -35px 20px #FE7606,
-                 -15px -40px 20px #FD5C01,
-                  15px -45px 15px #E54600,
-                 -20px -50px 15px #D23700,
-                  20px -55px 15px #B82B00,
-                 -20px -60px 15px #A11301,
-                  20px -65px 15px #981D01,
-                 -25px -70px 10px #851200,
-                  25px -75px 10px #690D00,
-                 -25px -80px 10px #3E0600;
+  font-size: 50pt;
+  font-weight: bold;
+  text-shadow:   0px   0px 10px white,
+                 5px  -5px 10px #F8FF9D,
+               -10px -10px 20px #F5FE5C,
+                10px -15px 20px #FDDB33,
+               -10px -20px 20px #FFC126,
+                10px -25px 20px #FF7808,
+               -10px -30px 20px #F95801,
+                15px -35px 20px #FE7606,
+               -15px -40px 20px #FD5C01,
+                15px -45px 15px #E54600,
+               -20px -50px 15px #D23700,
+                20px -55px 15px #B82B00,
+               -20px -60px 15px #A11301,
+                20px -65px 15px #981D01,
+               -25px -70px 10px #851200,
+                25px -75px 10px #690D00,
+               -25px -80px 10px #3E0600;
 }
 
 .level { 
@@ -108,6 +101,7 @@ small {
  user-select: none;
 
 }
+
 .level.spieler {
   background-color: black;
   color: orange;
@@ -116,14 +110,12 @@ small {
 #spiel  {
   width: 85%;
 }
+
 #feld .spielfeld  {
-  
   margin: 0 auto;
 }
+
 #feld .spielfeld td {
-  /*width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.3);*/
   border-width: 1px;
   border-style: solid;
   border-color: white;
@@ -136,6 +128,7 @@ small {
   height: 90px;
   background: black;
 }
+
 #anleitung {
   float: right;
   width: 85%;
@@ -145,6 +138,7 @@ small {
   text-align: justify;
   font-style: italic;
 }
+
 #anleitung .underline {
   text-decoration:underline
 }
