@@ -42,9 +42,10 @@ class WumpusView {
     final field = model.field;
     for (int row = 0; row < field.length; row++) {
       for (int col = 0; col < field[row].length; col++) {
-        final td = game.querySelector("#field_${row}_${col}");
+        var td = game.querySelector("#field_${row}_${col}");
         if (td != null) {
           td.classes.clear();
+          td.innerHtml = '';
           for (var s in field[row][col].split(' ')) {
             td.classes.add('level');
             if (s == "spieler") {
@@ -91,6 +92,7 @@ class WumpusView {
       }
     }
   }
+  
   /**
     *  Erzeugt das Spielfeld als HTML Tabelle (n * n) und fügt die Spielelemente von [model] ein.
     */
