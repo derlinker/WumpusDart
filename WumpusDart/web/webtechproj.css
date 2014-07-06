@@ -108,21 +108,6 @@ small {
  user-select: none;
 
 }
-.level.grube {
-  background-color: black;
-}
-.level.wumpus {
-  background-color: black;
-}
-.level.luftzug  {
-  background-color: black;
-}
-.level.gestank {
-  background-color: black;
-}
-.level.schatz {
-  background-color: black; 
-}
 .level.spieler {
   background-color: black;
   color: orange;
