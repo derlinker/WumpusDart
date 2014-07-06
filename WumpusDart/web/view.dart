@@ -10,7 +10,7 @@ class WumpusView {
   var gewonnen = querySelector('#gewonnen');
   var anleitung = querySelector('#anleitung');
   var einstellungen = querySelector('#einstellungen');
-  var level = querySelector('#level');
+  var levelnr = querySelector('#levelnr');
   var game = querySelector('.spielfeld');
   var endebutton = querySelector('#ende');
   var ausgabe = querySelector('#ausgabe');
@@ -27,6 +27,8 @@ class WumpusView {
     if(model.spielstatus == true)  {
       startbutton.style.display = "None";
       anleitung.style.display = "None";
+      levelnr.style.display = "inline";
+      levelnr.innerHtml = model.level.toString();
     }
       if(model.gewonnen == true)  {
         startbutton.style.display = "inline";

@@ -33,12 +33,12 @@ small {
 .menu{
 	float: left;
 	list-style-position: outside;
-	width: 15%
+	width: 15%;
+	color: white;
 }
 
-.menu .name {
+.menu .name #level{
   list-style-position: inside;
-  color: white;
 	font-weight: bold;
 }
 
