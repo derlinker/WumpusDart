@@ -154,6 +154,10 @@ small {
   width: 85%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.9);
-  font-size: 24px;
+  font-size: 18px;
   text-align: justify;
+  font-style: italic;
+}
+#anleitung .underline {
+  text-decoration:underline
 }

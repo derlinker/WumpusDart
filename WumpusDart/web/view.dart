@@ -18,7 +18,7 @@ class WumpusView {
   /**
    * Präsentiert das Model
    */
-  final model = new WumpusWelt(0, 0);
+  var model;
 
   /**
    * Aktualiseirt die View bzw. das SpielFeld
