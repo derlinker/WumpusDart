@@ -6,9 +6,9 @@ class WumpusWelt {
   //Status des Spiels
   var _spieler;
   // Variable für Gewonnen
-  bool _gewonnenstatus = false;
+  bool _gewonnen = false;
   // Variable für Verlieren
-  bool _verlierstatus = false;
+  bool _verloren = false;
   // Variable ob das Spiel läuft
   bool _spielstatus = false;
   int _size;
@@ -26,9 +26,9 @@ class WumpusWelt {
     _level = level;
    }
    
-   bool get gewonnen => _gewonnenstatus;
+   bool get gewonnen => _gewonnen;
    
-   bool get verloren => _verlierstatus;
+   bool get verloren => _verloren;
    
    bool get spielstatus => _spielstatus;
    
@@ -42,8 +42,8 @@ class WumpusWelt {
        _gruben = new Field(this._level).erstelleGruben;
        _gestank = new Field(this._level).erstelleGestank;
        _luftzug = new Field(this._level).erstelleLuftzug;
-       _gewonnenstatus = false;
-       _verlierstatus = false;
+       _gewonnen = false;
+       _verloren = false;
        _spielstatus = true;
      }
    
@@ -101,8 +101,8 @@ class WumpusWelt {
     
     void pruefeGewonnen()  {
       if(_spieler.getrow == _schatz.getRow && _spieler.getcol == _schatz.getCol){
-        _gewonnenstatus = true;
-                _verlierstatus = false;
+        _gewonnen = true;
+                _verloren = false;
                 _spielstatus = false;
                 _level = _level + 1;
                 print("Sie haben Gewonnen"); 
@@ -112,15 +112,15 @@ class WumpusWelt {
     
     void pruefeVerloren()  {
           if(_spieler.getrow == _wumpus.getRow && _spieler.getcol == _wumpus.getCol){
-            _gewonnenstatus = false;
-                        _verlierstatus = true;
+            _gewonnen = false;
+                        _verloren = true;
                         _spielstatus = false;
                         print("Sie haben Verloren");
           }
           _gruben.forEach((g){
             if(g.getRow == _spieler.getrow && g.getCol == _spieler.getcol){
-              _gewonnenstatus = false;
-                            _verlierstatus = true;
+              _gewonnen = false;
+                            _verloren = true;
                             _spielstatus = false;
                             print("Sie haben Verloren");
             }
