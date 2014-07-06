@@ -90,6 +90,8 @@ class Field {
     _luftzug.add(new Field.point(3, 3));
     _luftzug.add(new Field.point(2, 2));
     _luftzug.add(new Field.point(3, 1));
+    //test luftzug
+    _luftzug.add(new Field.point(2,  0));
   }
   
   void level2Luftzug(){
@@ -99,6 +101,8 @@ class Field {
       _luftzug.add(new Field.point(3, 3));
       _luftzug.add(new Field.point(2, 2));
       _luftzug.add(new Field.point(3, 1));
+      //test luftzug
+      _luftzug.add(new Field.point(2,  0));
     }
   
   Field get erstelleWumpus {

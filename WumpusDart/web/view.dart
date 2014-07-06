@@ -55,23 +55,33 @@ class WumpusView {
             }
             if (s == "wumpus") {
               td.classes.add('wumpus');
-              td.innerHtml = "Wumpus tötet den ";
+              if (td.innerHtml != "Wumpus"){
+                td.innerHtml = "Wumpus<br>";
+              }
             }
             if (s == "grube") {
               td.classes.add('grube');
-              td.innerHtml = "Eine Tiefe Grube für den ";
+              if (td.innerHtml != "Grube"){
+                td.innerHtml = "Grube<br>";
+              }
             }
             if (s == "luftzug") {
               td.classes.add('luftzug');
-              td.innerHtml = "Ein Luftzug spürt der ";
+              if(td.innerHtml != "Luftzug"){
+                td.innerHtml += "Luftzug<br>";
+              }
             }
             if (s == "schatz") {
               td.classes.add('schatz');
-              td.innerHtml = "Goldtruhe findet der ";
+              if (td.innerHtml != "Schatz"){
+                td.innerHtml = "Schatz<br>";
+              }
             }
             if (s == "gestank") {
               td.classes.add('gestank');
-              td.innerHtml = "Ein Geruch für den  ";
+              if (td.innerHtml != "Gestank"){
+                td.innerHtml += "Gestank<br>";
+              }
             }
           }
           if (field[row][col] == "level") {
