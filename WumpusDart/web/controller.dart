@@ -54,6 +54,30 @@ class WumpusController {
         case 10:
           game = new WumpusWelt(4, 10);
           break;
+        case 11:
+          game = new WumpusWelt(6, 11);
+          break;
+        case 12:
+          game = new WumpusWelt(7, 12);
+          break;
+        case 13:
+          game = new WumpusWelt(7, 13);
+          break;
+        case 14:
+          game = new WumpusWelt(4, 14);
+          break;
+        case 15:
+          game = new WumpusWelt(5, 15);
+          break;
+        case 16:
+          game = new WumpusWelt(7, 16);
+          break;
+        case 17:
+          game = new WumpusWelt(6, 17);
+          break;
+        case 18:
+          game = new WumpusWelt(8, 18);
+          break;
       }
       if (game.spielstatus == true) {
         view.generateField(game);
@@ -67,19 +91,15 @@ class WumpusController {
         switch (ev.keyCode) {
           case KeyCode.LEFT:
             game.spieler.links();
-            print("Der Spieler bewegt sich nach Links");
             break;
           case KeyCode.RIGHT:
             game.spieler.rechts();
-            print("Der Spieler bewegt sich nach Rechts");
             break;
           case KeyCode.UP:
             game.spieler.hoch();
-            print("Der Spieler bewegt sich nach Oben");
             break;
           case KeyCode.DOWN:
             game.spieler.runter();
-            print("Der Spieler bewegt sich nach Unten");
             break;
         }
         view.update(game);

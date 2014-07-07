@@ -96,6 +96,9 @@ class WumpusWelt {
     return _field;
   }
 
+  /**
+   * Liefert das Feld zurück
+   */
   List<List<String>> get field => _field;
 
   /**
@@ -104,7 +107,7 @@ class WumpusWelt {
   Spieler get spieler => _spieler;
 
   /**
-   * Prueft die Eingabe, ob der Spieler
+   * Prüft die Eingabe, ob der Spieler
    * durch diese das Spielfeld verlassen würde
    * @return pruefeEingabe
    */
@@ -118,7 +121,7 @@ class WumpusWelt {
 
 
   /**
-   * Prueft ob der Spieler den Schatz erreicht hat
+   * Prüft ob der Spieler den Schatz erreicht hat
    */
   void pruefeGewonnen() {
     if (_spieler.getrow == _schatz.getRow && _spieler.getcol == _schatz.getCol) {
@@ -126,33 +129,30 @@ class WumpusWelt {
       _verloren = false;
       _spielstatus = false;
       _level = _level + 1;
-      print("Sie haben Gewonnen");
     }
   }
 
   /**
-   * Prueft ob der Spieler den Wumpus oder eine Falle erreicht hat
+   * Prüft ob der Spieler den Wumpus oder eine Falle erreicht hat
    */
   void pruefeVerloren() {
     if (_spieler.getrow == _wumpus.getRow && _spieler.getcol == _wumpus.getCol) {
       _gewonnen = false;
       _verloren = true;
       _spielstatus = false;
-      print("Sie haben Verloren");
     }
     _gruben.forEach((g) {
       if (g.getRow == _spieler.getrow && g.getCol == _spieler.getcol) {
         _gewonnen = false;
         _verloren = true;
         _spielstatus = false;
-        print("Sie haben Verloren");
       }
     });
   }
 }
 
 /**
- * Repraesentiert den Spieler
+ * Repräsentiert den Spieler
  */
 class Spieler {
   // Variable fuer Spalte

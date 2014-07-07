@@ -35,7 +35,7 @@ class WumpusView {
     }
     //Wenn gewonnen
       if(model.gewonnen == true)  {
-        if(model.level > 10){
+        if(model.level > 18){
           startbutton.style.display = "None";
           menu.style.display = "None";
           gameover.style.display = "inline";
