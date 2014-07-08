@@ -12,6 +12,7 @@ class WumpusView {
   var gameover = querySelector('#gameover');
   var gewonnen = querySelector('#gewonnen');
   var anleitung = querySelector('#anleitung');
+  var level = querySelector('#level');
   var levelnr = querySelector('#levelnr');
   var game = querySelector('.spielfeld');
   var menu = querySelector('.menu');
@@ -37,9 +38,11 @@ class WumpusView {
       if(model.gewonnen == true)  {
         if(model.level > 18){
           startbutton.style.display = "None";
-          menu.style.display = "None";
+          levelnr.style.display = "None";
+          level.style.display = "None";
+          name.innerHtml = "Menü";
           gameover.style.display = "inline";
-          gameover..innerHtml = "Herzlichen Glückwunsch<br><br>Sie haben das Spiel gewonnen!";
+          gameover..innerHtml = "Herzlichen Glückwunsch<br><br>Sie haben gewonnen!";
           game.style.display = "None";
         }else{
         startbutton.style.display = "inline";
