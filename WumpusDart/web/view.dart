@@ -6,7 +6,7 @@ import 'model.dart';
 
 class WumpusView {
   /**
-   * querySelectoren für die einzelnen Feler im HTML
+   * querySelectoren für die einzelnen Felder im HTML
    */
   var startbutton = querySelector('#start');
   var gameover = querySelector('#gameover');
