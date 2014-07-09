@@ -40,7 +40,7 @@ class WumpusView {
           startbutton.style.display = "None";
           levelnr.style.display = "None";
           level.style.display = "None";
-          name.innerHtml = "Menü";
+          name.innerHtml = "Es Danken:";
           gameover.style.display = "inline";
           gameover..innerHtml = "Herzlichen Glückwunsch<br><br>Sie haben gewonnen!";
           game.style.display = "None";
